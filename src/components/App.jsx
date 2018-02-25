@@ -9,6 +9,7 @@ import { hot } from 'react-hot-loader';
 import styles from '../stylesheets/App.sass';
 import Granim from './Granim.jsx';
 import granimData from '../data/granimData.js';
+import {Helmet} from "react-helmet";
 
 class App extends Component {
     state = {
@@ -26,6 +27,10 @@ class App extends Component {
     render = () => {
         return (
             <div>
+                <Helmet>
+                    <meta charSet='utf-8' />
+                    <title>Portfolio</title>
+                </Helmet>
                 <Granim 
                     defaultStateName={this.state.granim}
                     states={granimData}

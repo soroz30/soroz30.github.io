@@ -1,16 +1,15 @@
 import webpack from 'webpack';
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const config = {
     entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.join(__dirname, '/dist'),
         filename: 'build.js'
     },
     devServer: {
-        contentBase: './dist',
+        contentBase: './',
         hot: true
     },
     devtool: 'eval-source-map',
@@ -46,10 +45,6 @@ const config = {
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            title: 'Portfolio',
-            template: 'src/index.html'
-        }),
         new ExtractTextPlugin('styles.css')
     ]
 }

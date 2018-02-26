@@ -19,7 +19,10 @@
     "react-event-listener": "^0.5.3",
     "react-helmet": "^5.2.0",
     "react-hot-loader": "^4.0.0-rc.0",
+    "react-icons": "^2.2.7",
+    "react-move": "^2.7.0",
     "react-router-dom": "^4.2.2",
+    "react-router-page-transition": "^3.0.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   },

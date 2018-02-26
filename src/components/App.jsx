@@ -17,11 +17,11 @@ class App extends Component {
     }
 
     handleEvent = (granimState) => {
-        console.log(granimState);
         this.setState({granim: granimState});
-        setTimeout(() => {
-            console.log('-----\n' + this.state.granim)
-        }, 100);
+    }
+
+    componentWillReceiveProps = () => {
+        console.log('app')
     }
 
     render = () => {

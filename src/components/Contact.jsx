@@ -3,7 +3,7 @@ import styles from '../stylesheets/Contact.sass'
 
 const Contact = () => {
     return (
-	   <h1 className={styles.h1}>Contact</h1>
+	   <h1>Contact</h1>
     );
 }
 

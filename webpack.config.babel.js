@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config = {
     entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
@@ -12,7 +13,7 @@ const config = {
         contentBase: './',
         hot: true
     },
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -45,7 +46,10 @@ const config = {
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
     ]
 }
 

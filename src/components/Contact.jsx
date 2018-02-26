@@ -1,10 +1,14 @@
 import React from 'react';
-import styles from '../stylesheets/Contact.sass'
+import styles from '../stylesheets/Contact.sass';
+import Form from './Form.jsx';
 
 const Contact = () => {
     return (
-	   <h1>Contact</h1>
-    );
+        <div class={styles.contact}>
+            <Form />
+            <span>Tel: 517-243-763</span>
+        </div>
+    )
 }
 
 export default Contact;

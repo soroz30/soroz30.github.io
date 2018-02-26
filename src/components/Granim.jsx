@@ -12,6 +12,7 @@ export default class Granim extends Component {
         console.log(this.props.states);
         this.granim = new granim({
             defaultStateName: this.props.defaultStateName,
+            direction: 'radial',
             element: '#granim',
             name: 'granim',
             opacity: [1, 1],

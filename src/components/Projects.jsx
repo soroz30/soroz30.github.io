@@ -74,7 +74,7 @@ export default class Projects extends Component {
                     }}
                 </Animate>
                 <div className={styles.navigation}>
-                    <span className={styles.scroll} onClick={() => this.handleClick()}></span>
+                    <span className={styles.scroll} onClick={this.handleClick}></span>
                 </div>
 		    </div>
         );

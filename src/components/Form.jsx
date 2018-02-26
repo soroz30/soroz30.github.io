@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../stylesheets/Form.sass';
+import styles from 'stylesheets/Form';
 
 const Form = () => {
 	return (
@@ -16,7 +16,7 @@ const Form = () => {
 
      		<fieldset>
         		<label htmlFor='message'>Message</label>
-        		<textarea id='message' name='message' rows='5'></textarea>
+        		<textarea id='message' name='message' rows='10'></textarea>
         	</fieldset>
 
      		<fieldset>

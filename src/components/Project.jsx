@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../stylesheets/Project.sass';
-import projectsData from '../data/projectsData.js';
+import styles from 'stylesheets/Project';
+import projectsData from '../data/projectsData';
 import FontAwesome from 'react-icons/lib/fa/github';
 
 const Project = ({projectNumber}) => {

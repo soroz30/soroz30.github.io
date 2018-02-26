@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../stylesheets/Home.sass';
+import styles from 'stylesheets/Home';
 
 const Home = () => {
     return (

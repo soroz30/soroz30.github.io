@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './Home.jsx';
-import Projects from './Projects.jsx';
-import TopNav from './TopNav.jsx';
-import Contact from './Contact.jsx';
-import NotFound from './NotFound.jsx';
+import Home from './Home';
+import Projects from './Projects';
+import TopNav from './TopNav';
+import Contact from './Contact';
+import NotFound from './NotFound';
 import { hot } from 'react-hot-loader';
-import styles from '../stylesheets/App.sass';
-import Granim from './Granim.jsx';
-import granimData from '../data/granimData.js';
-import {Helmet} from "react-helmet";
+import styles from 'stylesheets/App';
+import Granim from './Granim';
+import granimData from '../data/granimData';
+import {Helmet} from 'react-helmet';
 
 class App extends Component {
     state = {
@@ -18,10 +18,6 @@ class App extends Component {
 
     handleEvent = (granimState) => {
         this.setState({granim: granimState});
-    }
-
-    componentWillReceiveProps = () => {
-        console.log('app')
     }
 
     render = () => {

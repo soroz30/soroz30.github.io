@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from '../stylesheets/TopNav.sass';
+import styles from 'stylesheets/TopNav';
 
 const TopNav = (props) => {
     return (

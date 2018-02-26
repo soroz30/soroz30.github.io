@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Project from './Project.jsx';
+import Project from './Project';
 import EventListener from 'react-event-listener';
-import styles from '../stylesheets/Projects.sass';
+import styles from 'stylesheets/Projects';
 import Animate from 'react-move/Animate';
 
 export default class Projects extends Component {

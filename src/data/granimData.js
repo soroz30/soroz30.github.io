@@ -41,6 +41,6 @@ const granimData = {
         ],
         transitionSpeed: 2000
     }
-}
+};
 
 export default granimData;

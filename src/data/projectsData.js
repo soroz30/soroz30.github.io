@@ -35,6 +35,6 @@ const projects = {
         gitCode: 'https://github.com/soroz30/PsdToWeb3',
         img: 'src/images/psd-to-web3.jpg'
     }
-}
+};
 
 export default projects;

@@ -23,7 +23,7 @@ const Form = () => {
         		<input type='submit' value='Send'/>
         	</fieldset>
         </form>
-    )
-}
+    );
+};
 
 export default Form;

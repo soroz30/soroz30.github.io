@@ -15,7 +15,7 @@ let plugins = [
                 new HtmlWebpackPlugin({
                     template: './src/index.html'
                 })
-    ]
+              ]
 
 if (env === 'production') {
     plugins.push(
@@ -42,7 +42,7 @@ const config = {
             {
                 test: /\.js$|\.jsx$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: 'babel-loader'
             },
             {
                 test: /\.sass$/,

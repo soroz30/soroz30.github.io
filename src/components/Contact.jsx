@@ -8,7 +8,7 @@ const Contact = () => {
             <Form />
             <span>Tel: 517-243-763</span>
         </div>
-    )
-}
+    );
+};
 
 export default Contact;

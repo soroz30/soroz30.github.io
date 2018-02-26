@@ -10,6 +10,6 @@ const TopNav = (props) => {
             <NavLink to='/contact' className={styles.link} activeClassName={styles.active} onClick={() => props.handleEvent('contact')}>Contact</NavLink>
         </div>
     );
-}
+};
 
 export default TopNav;

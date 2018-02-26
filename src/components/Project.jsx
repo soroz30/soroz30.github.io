@@ -4,7 +4,6 @@ import projectsData from '../data/projectsData';
 import FontAwesome from 'react-icons/lib/fa/github';
 
 const Project = ({projectNumber}) => {
-
     const { img, description, gitPage, gitCode } = projectsData[projectNumber];
 	return (
         <div>
@@ -20,7 +19,7 @@ const Project = ({projectNumber}) => {
                 </figcaption>
             </figure>
 	    </div>
-    )
-}
+    );
+};
 
 export default Project;

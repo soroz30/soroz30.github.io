@@ -9,7 +9,6 @@ export default class Granim extends Component {
 	}
 
     componentDidMount = () => {
-        console.log(this.props.states);
         this.granim = new granim({
             defaultStateName: this.props.defaultStateName,
             direction: 'radial',

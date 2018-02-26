@@ -13,7 +13,6 @@ const config = {
         contentBase: './',
         hot: true
     },
-    devtool: 'source-map',
     module: {
         rules: [
             {

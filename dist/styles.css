@@ -187,12 +187,16 @@ h1 {
     display: block; }
   ._3AbL-Oiz1UQ3BMllPzz_Qu input, ._3AbL-Oiz1UQ3BMllPzz_Qu textarea {
     float: right; }
+html {
+  height: 100vh; }
+
 * {
   box-sizing: border-box; }
 
 body {
   font-family: 'Raleway', sans-serif;
   overflow: hidden;
+  height: 100vh;
   text-align: center; }
 
 ._1IcdNlkyXgbo9fbWzH8ROk {

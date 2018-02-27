@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6c9374b581ae8c62c52d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2ac310a73c4b03fbdb50"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -39039,7 +39039,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ "./node_modules/react-icons/lib/fa/chevron-down.js":
+/***/ "./node_modules/react-icons/lib/fa/angle-double-left.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39061,19 +39061,58 @@ var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var FaChevronDown = function FaChevronDown(props) {
+var FaAngleDoubleLeft = function FaAngleDoubleLeft(props) {
     return _react2.default.createElement(
         _reactIconBase2.default,
         _extends({ viewBox: '0 0 40 40' }, props),
         _react2.default.createElement(
             'g',
             null,
-            _react2.default.createElement('path', { d: 'm37.6 18l-16.6 16.6q-0.4 0.4-1 0.4t-1-0.4l-16.6-16.6q-0.4-0.4-0.4-1t0.4-1l3.7-3.7q0.5-0.4 1-0.4t1 0.4l11.9 11.9 11.9-11.9q0.4-0.4 1-0.4t1 0.4l3.7 3.7q0.4 0.4 0.4 1t-0.4 1z' })
+            _react2.default.createElement('path', { d: 'm22 30.7q0 0.3-0.2 0.5l-1.1 1.1q-0.3 0.3-0.6 0.3t-0.5-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l10.4-10.4q0.3-0.2 0.5-0.2t0.6 0.2l1.1 1.1q0.2 0.3 0.2 0.5t-0.2 0.6l-8.8 8.7 8.8 8.8q0.2 0.2 0.2 0.5z m8.6 0q0 0.3-0.3 0.5l-1.1 1.1q-0.2 0.3-0.5 0.3t-0.5-0.3l-10.4-10.4q-0.2-0.2-0.2-0.5t0.2-0.5l10.4-10.4q0.2-0.2 0.5-0.2t0.5 0.2l1.1 1.1q0.3 0.3 0.3 0.5t-0.3 0.6l-8.7 8.7 8.7 8.8q0.3 0.2 0.3 0.5z' })
         )
     );
 };
 
-exports.default = FaChevronDown;
+exports.default = FaAngleDoubleLeft;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/react-icons/lib/fa/angle-double-right.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__("./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactIconBase = __webpack_require__("./node_modules/react-icon-base/lib/index.js");
+
+var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FaAngleDoubleRight = function FaAngleDoubleRight(props) {
+    return _react2.default.createElement(
+        _reactIconBase2.default,
+        _extends({ viewBox: '0 0 40 40' }, props),
+        _react2.default.createElement(
+            'g',
+            null,
+            _react2.default.createElement('path', { d: 'm22.3 21.4q0 0.3-0.2 0.5l-10.4 10.4q-0.3 0.3-0.6 0.3t-0.5-0.3l-1.1-1.1q-0.2-0.2-0.2-0.5t0.2-0.5l8.8-8.8-8.8-8.7q-0.2-0.3-0.2-0.6t0.2-0.5l1.1-1.1q0.3-0.2 0.5-0.2t0.6 0.2l10.4 10.4q0.2 0.2 0.2 0.5z m8.6 0q0 0.3-0.3 0.5l-10.4 10.4q-0.2 0.3-0.5 0.3t-0.5-0.3l-1.1-1.1q-0.2-0.2-0.2-0.5t0.2-0.5l8.8-8.8-8.8-8.7q-0.2-0.3-0.2-0.6t0.2-0.5l1.1-1.1q0.2-0.2 0.5-0.2t0.5 0.2l10.4 10.4q0.3 0.2 0.3 0.5z' })
+        )
+    );
+};
+
+exports.default = FaAngleDoubleRight;
 module.exports = exports['default'];
 
 /***/ }),
@@ -45285,9 +45324,13 @@ var _reactResponsive = __webpack_require__("./node_modules/react-responsive/dist
 
 var _reactResponsive2 = _interopRequireDefault(_reactResponsive);
 
-var _chevronDown = __webpack_require__("./node_modules/react-icons/lib/fa/chevron-down.js");
+var _angleDoubleLeft = __webpack_require__("./node_modules/react-icons/lib/fa/angle-double-left.js");
 
-var _chevronDown2 = _interopRequireDefault(_chevronDown);
+var _angleDoubleLeft2 = _interopRequireDefault(_angleDoubleLeft);
+
+var _angleDoubleRight = __webpack_require__("./node_modules/react-icons/lib/fa/angle-double-right.js");
+
+var _angleDoubleRight2 = _interopRequireDefault(_angleDoubleRight);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45350,6 +45393,21 @@ var Projects = function (_Component) {
                     return _this.setState({ inactiveChange: false });
                 }, 1000);
             });
+        }, _this.prevSlide = function (e) {
+            e.preventDefault();
+            if (_this.state.inactiveChange) {
+                return;
+            }
+            var numberOfGradients = 4;
+            _this.setState({ inactiveChange: true, showProject: false }, function () {
+                ;
+                _this.decreaseIterator();
+                var slideNumber = _this.state.iterator % numberOfGradients;
+                _this.props.handleEvent('projects' + slideNumber);
+                setTimeout(function () {
+                    return _this.setState({ inactiveChange: false });
+                }, 1000);
+            });
         }, _this.increaseIterator = function () {
             if (_this.state.iterator === _this.state.numberOfSlides - 1) {
                 _this.setState({ iterator: 0, showProject: true });
@@ -45402,9 +45460,8 @@ var Projects = function (_Component) {
                                 return _react2.default.createElement(
                                     'div',
                                     null,
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick }),
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick }),
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick })
+                                    _react2.default.createElement(_angleDoubleLeft2.default, { className: _Projects2.default['angle-double'], size: 36, onClick: _this.prevSlide }),
+                                    _react2.default.createElement(_angleDoubleRight2.default, { className: _Projects2.default['angle-double'], size: 36, onClick: _this.handleClick })
                                 );
                             }
                         }
@@ -45700,7 +45757,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 // removed by extract-text-webpack-plugin
 module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Portfolio":"_1IRt_ozmSQTA8jJ4stLFaN"};
     if(true) {
-      // 1519733694567
+      // 1519735677421
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45715,7 +45772,7 @@ module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Portfolio":"_1IRt_ozmSQTA8
 // removed by extract-text-webpack-plugin
 module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
     if(true) {
-      // 1519733694543
+      // 1519735677376
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45730,7 +45787,7 @@ module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
 // removed by extract-text-webpack-plugin
 module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
     if(true) {
-      // 1519733694561
+      // 1519735677411
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45744,7 +45801,7 @@ module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
 
 // removed by extract-text-webpack-plugin
     if(true) {
-      // 1519733694606
+      // 1519735677469
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45759,7 +45816,7 @@ module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
 // removed by extract-text-webpack-plugin
 module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhOX7r","figcaption":"_2l299Yir3ZKjea6pvcVTeo","git-link":"_1558Lyd9eCwaidBMlYv5U0"};
     if(true) {
-      // 1519733694625
+      // 1519735677492
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45772,9 +45829,9 @@ module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhO
 /***/ (function(module, exports, __webpack_require__) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"navigation":"_1i91PpK9o7Px2nYQrLlXMb","scroll":"_1GfY9uv6WSsWxZ3FJ9ezmY","scroll-background":"xZ-We8epm2hfXZSZiSJMR","chevron":"_3zWGzep_7hJBj0ErhpJZY6","move-chevron":"_26DBDxFmZZjYR5cBD5xC2i"};
+module.exports = {"navigation":"_1i91PpK9o7Px2nYQrLlXMb","scroll":"_1GfY9uv6WSsWxZ3FJ9ezmY","scroll-background":"xZ-We8epm2hfXZSZiSJMR","angle-double":"_1HuuFQzzLjjQHubc6rGoE4"};
     if(true) {
-      // 1519733694598
+      // 1519735677462
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45789,7 +45846,7 @@ module.exports = {"navigation":"_1i91PpK9o7Px2nYQrLlXMb","scroll":"_1GfY9uv6WSsW
 // removed by extract-text-webpack-plugin
 module.exports = {"Top-Nav":"_3Wd9iMpbiqskBX6YO5qMgL","link":"_29s8jSZqSEI3Vcl3L218eV","active":"_2F4Qi0K5dDiYdExIlJ4KBk"};
     if(true) {
-      // 1519733694582
+      // 1519735677441
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

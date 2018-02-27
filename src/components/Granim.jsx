@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import PropsType from 'prop-types';
+import PropTypes from 'prop-types';
 import granim from 'granim';
 
-export default class Granim extends Component {
-	static propsType = {
-		defaultStateName: PropsType.string,
-		states: PropsType.object.isRequired
-	}
+const propTypes = {
+    defaultStateName: PropTypes.string,
+    granimClass: PropTypes.string,
+    states: PropTypes.object.isRequired
+}
 
+class Granim extends Component {
     componentDidMount = () => {
         this.granim = new granim({
             defaultStateName: this.props.defaultStateName,
@@ -26,7 +27,11 @@ export default class Granim extends Component {
 
 	render = () => {
 		return (
-            <canvas id='granim' className={this.props.granimClass} />   
+            <canvas id="granim" className={this.props.granimClass} />   
         )
 	}
 }
+
+Granim.propTypes = propTypes;
+
+export default Granim;

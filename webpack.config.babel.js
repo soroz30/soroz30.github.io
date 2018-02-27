@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -14,7 +15,10 @@ let plugins = [
                 new ExtractTextPlugin('styles.css'),
                 new HtmlWebpackPlugin({
                     template: './src/index.html'
-                })
+                }),
+                new CopyWebpackPlugin([
+                    {from:'src/images',to:'images'}
+                ])
               ]
 
 if (env === 'production') {
@@ -38,6 +42,7 @@ const config = {
         historyApiFallback: true,
         hot: true
     },
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -57,7 +62,7 @@ const config = {
                             }
                         },
                         { loader: 'sass-loader' }
-                    ]
+                ]
                 }))
             },
             {
@@ -73,8 +78,8 @@ const config = {
                             }
                         }
                     },
-                    ],
-                }
+                ],
+            }
         ]
     },
     plugins: plugins,

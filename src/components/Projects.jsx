@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import Project from './Project';
 import EventListener from 'react-event-listener';
 import styles from 'stylesheets/Projects';
@@ -7,51 +8,45 @@ import MediaQuery from 'react-responsive';
 import AngleDoubleLeft from 'react-icons/lib/fa/angle-double-left';
 import AngleDoubleRight from 'react-icons/lib/fa/angle-double-right';
 
-export default class Projects extends Component {
+const propTypes = {
+    handleEvent: PropTypes.func.isRequired
+}
+
+class Projects extends Component {
     state = {
         iterator: 0,
-        inactiveChange: false,
-        numberOfSlides: 6,
+        disabledChange: false,
         showProject: true
     }
 
 	handleWheel = e => {
-        e.preventDefault();
-        if (this.state.inactiveChange) { return; }
-        const numberOfGradients = 4;
-        this.setState({ inactiveChange: true, showProject: false });
-        e.wheelDelta < 0 ? this.increaseIterator() : this.decreaseIterator();
-        const slideNumber = this.state.iterator % numberOfGradients;
-        this.props.handleEvent(`projects${slideNumber}`);
-        setTimeout(() => this.setState({ inactiveChange: false }), 1000);
+        if (this.state.disabledChange) { return; }
+        e.wheelDelta < 0 ? this.changeSlide('next') : this.changeSlide('prev');
 	}
 
-    handleClick = e => {
-        e.preventDefault();
-        if (this.state.inactiveChange) { return; }
-        const numberOfGradients = 4;
-        this.setState({ inactiveChange: true, showProject: false }, () => {;
-            this.increaseIterator();
-            const slideNumber = this.state.iterator % numberOfGradients;
-            this.props.handleEvent(`projects${slideNumber}`);
-            setTimeout(() => this.setState({ inactiveChange: false }), 1000);
-        });
+    nextSlide = e => {
+        if (this.state.disabledChange) { return; }
+        this.changeSlide('next');
     }
 
     prevSlide = e => {
-        e.preventDefault();
-        if (this.state.inactiveChange) { return; }
+        if (this.state.disabledChange) { return; }
+        this.changeSlide('prev');
+    }
+
+    changeSlide = (direction) => {
         const numberOfGradients = 4;
-        this.setState({ inactiveChange: true, showProject: false }, () => {;
-            this.decreaseIterator();
+        this.setState({ disabledChange: true, showProject: false }, () => {
+            direction === 'next' ? this.increaseIterator() : this.decreaseIterator();
             const slideNumber = this.state.iterator % numberOfGradients;
             this.props.handleEvent(`projects${slideNumber}`);
-            setTimeout(() => this.setState({ inactiveChange: false }), 1000);
+            setTimeout(() => this.setState({ disabledChange: false }), 1000);
         });
     }
 
     increaseIterator = () => {
-        if (this.state.iterator === this.state.numberOfSlides - 1) {
+        const slidesArrayLength = 5;
+        if (this.state.iterator === slidesArrayLength) {
             this.setState({ iterator: 0, showProject: true });
         } else {
             this.setState({ iterator: this.state.iterator + 1, showProject: true });
@@ -59,8 +54,9 @@ export default class Projects extends Component {
     }
 
     decreaseIterator = () => {
+        const slidesArrayLength = 5;
         if (this.state.iterator === 0) {
-            this.setState({ iterator: this.state.numberOfSlides - 1, showProject: true });
+            this.setState({ iterator: slidesArrayLength, showProject: true });
         } else {
             this.setState({ iterator: this.state.iterator - 1, showProject: true });
         }
@@ -94,12 +90,20 @@ export default class Projects extends Component {
                     <MediaQuery minWidth={992}>
                         {(matches) => {
                             if (matches) 
-                                return <span className={styles.scroll} onClick={this.handleClick}></span>
+                                return <span className={styles.scroll} onClick={this.nextSlide}></span>
                             else {
                                 return (
                                     <div>
-                                        <AngleDoubleLeft className={styles['angle-double']} size={36} onClick={this.prevSlide}/>
-                                        <AngleDoubleRight className={styles['angle-double']} size={36} onClick={this.handleClick}/>
+                                        <AngleDoubleLeft 
+                                            className={styles["angle-double"]} 
+                                            size={36}
+                                            onClick={this.prevSlide}
+                                        />
+                                        <AngleDoubleRight
+                                            className={styles["angle-double"]}
+                                            size={36}
+                                            onClick={this.nextSlide}
+                                        />
                                     </div>
                                 )
                             }
@@ -110,3 +114,7 @@ export default class Projects extends Component {
         );
 	}
 }
+
+Projects.propTypes = propTypes;
+
+export default Projects;

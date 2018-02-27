@@ -4,7 +4,6 @@ import Home from './Home';
 import Projects from './Projects';
 import TopNav from './TopNav';
 import Contact from './Contact';
-import NotFound from './NotFound';
 import { hot } from 'react-hot-loader';
 import styles from 'stylesheets/App';
 import Granim from './Granim';
@@ -36,13 +35,13 @@ class App extends Component {
                     <div className={styles.Portfolio}>
                         <TopNav handleEvent={this.handleEvent} />
                         <Switch>
-                            <Route exact path='/' component={Home} />
-                            <Route path='/projects' render={() => {
+                            <Route exact path="/" component={Home} />
+                            <Route path="/projects" render={() => {
                                 return (
                                     <Projects handleEvent={this.handleEvent} />
                                 )
                             }} />
-                            <Route path='/contact' component={Contact} />
+                            <Route path="/contact" component={Contact} />
                         </Switch>
                     </div>
             </div>

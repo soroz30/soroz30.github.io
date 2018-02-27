@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'stylesheets/Project';
 import projectsData from '../data/projectsData';
-import FontAwesome from 'react-icons/lib/fa/github';
+import GithubLogo from 'react-icons/lib/fa/github';
 
 const Project = ({projectNumber}) => {
     const { img, description, gitPage, gitCode } = projectsData[projectNumber];
@@ -14,7 +14,7 @@ const Project = ({projectNumber}) => {
                     {description}
                     <a className={styles['git-link']} href={gitCode}>
                         Github
-                        <FontAwesome size={36}/>
+                        <GithubLogo size={36}/>
                     </a>
                 </figcaption>
             </figure>

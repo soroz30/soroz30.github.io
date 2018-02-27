@@ -3,6 +3,8 @@ import Project from './Project';
 import EventListener from 'react-event-listener';
 import styles from 'stylesheets/Projects';
 import Animate from 'react-move/Animate';
+import MediaQuery from 'react-responsive';
+import ChevronDown from 'react-icons/lib/fa/chevron-down';
 
 export default class Projects extends Component {
     state = {
@@ -74,7 +76,21 @@ export default class Projects extends Component {
                     }}
                 </Animate>
                 <div className={styles.navigation}>
-                    <span className={styles.scroll} onClick={this.handleClick}></span>
+                    <MediaQuery minWidth={992}>
+                        {(matches) => {
+                            if (matches) 
+                                return <span className={styles.scroll} onClick={this.handleClick}></span>
+                            else {
+                                return (
+                                    <div>
+                                    <ChevronDown className={styles.chevron}/>
+                                    <ChevronDown className={styles.chevron}/>
+                                    <ChevronDown className={styles.chevron}/>
+                                    </div>
+                                )
+                            }
+                        }}
+                    </MediaQuery>
                 </div>
 		    </div>
         );

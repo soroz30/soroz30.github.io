@@ -1,5 +1,9 @@
+@import 'Variables'
+
 .Top-Nav
   padding: 40px 0 0
+  @media #{$max-sm}
+    padding: 10px 0 0
 
 .link
   color: #fff
@@ -12,6 +16,11 @@
   	background: #fff
   	mix-blend-mode: screen
   	outline: 1px solid #fff
+  @media #{$max-sm}
+    display: inline-block
+    margin: 0 0 20px
+    font-size: 16px
+    padding: 0 50px
 
 .active
   border: 1px solid #fff

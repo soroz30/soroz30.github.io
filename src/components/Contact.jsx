@@ -4,7 +4,7 @@ import Form from './Form';
 
 const Contact = () => {
     return (
-        <div class={styles.contact}>
+        <div className={styles.contact}>
             <Form />
             <span>Tel: 517-243-763</span>
         </div>

@@ -83,9 +83,9 @@ export default class Projects extends Component {
                             else {
                                 return (
                                     <div>
-                                    <ChevronDown className={styles.chevron}/>
-                                    <ChevronDown className={styles.chevron}/>
-                                    <ChevronDown className={styles.chevron}/>
+                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
+                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
+                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
                                     </div>
                                 )
                             }

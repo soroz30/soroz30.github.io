@@ -67,7 +67,7 @@ const config = {
                         loader: 'image-webpack-loader',
                         options: {
                             mozjpeg: {
-                            progressive: true,
+                            progressive: false,
                             quality: 80
                             }
                         }

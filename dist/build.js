@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c939144436b20e911474"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "880f0ce377edd5df4e7c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -45400,9 +45400,9 @@ var Projects = function (_Component) {
                                 return _react2.default.createElement(
                                     'div',
                                     null,
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron }),
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron }),
-                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron })
+                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick }),
+                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick }),
+                                    _react2.default.createElement(_chevronDown2.default, { className: _Projects2.default.chevron, onClick: _this.handleClick })
                                 );
                             }
                         }
@@ -45698,7 +45698,7 @@ _reactDom2.default.render(_react2.default.createElement(_App2.default, null), do
 // removed by extract-text-webpack-plugin
 module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Portfolio":"_1IRt_ozmSQTA8jJ4stLFaN"};
     if(true) {
-      // 1519726443149
+      // 1519728873917
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45713,7 +45713,7 @@ module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Portfolio":"_1IRt_ozmSQTA8
 // removed by extract-text-webpack-plugin
 module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
     if(true) {
-      // 1519726443165
+      // 1519728873896
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45728,7 +45728,7 @@ module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
 // removed by extract-text-webpack-plugin
 module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
     if(true) {
-      // 1519726443184
+      // 1519728873936
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45742,7 +45742,7 @@ module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
 
 // removed by extract-text-webpack-plugin
     if(true) {
-      // 1519726443279
+      // 1519728874020
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45757,7 +45757,7 @@ module.exports = {"form":"_3AbL-Oiz1UQ3BMllPzz_Qu"};
 // removed by extract-text-webpack-plugin
 module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhOX7r","figcaption":"_2l299Yir3ZKjea6pvcVTeo","git-link":"_1558Lyd9eCwaidBMlYv5U0"};
     if(true) {
-      // 1519726443273
+      // 1519728874035
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45772,7 +45772,7 @@ module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhO
 // removed by extract-text-webpack-plugin
 module.exports = {"navigation":"_1i91PpK9o7Px2nYQrLlXMb","scroll":"_1GfY9uv6WSsWxZ3FJ9ezmY","scroll-background":"xZ-We8epm2hfXZSZiSJMR","chevron":"_3zWGzep_7hJBj0ErhpJZY6","move-chevron":"_26DBDxFmZZjYR5cBD5xC2i"};
     if(true) {
-      // 1519726443252
+      // 1519728873994
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -45787,7 +45787,7 @@ module.exports = {"navigation":"_1i91PpK9o7Px2nYQrLlXMb","scroll":"_1GfY9uv6WSsW
 // removed by extract-text-webpack-plugin
 module.exports = {"Top-Nav":"_3Wd9iMpbiqskBX6YO5qMgL","link":"_29s8jSZqSEI3Vcl3L218eV","active":"_2F4Qi0K5dDiYdExIlJ4KBk"};
     if(true) {
-      // 1519726443228
+      // 1519728873962
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

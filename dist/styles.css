@@ -12,19 +12,19 @@ h1 {
   @media screen and (max-width: 1199px) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 65vw; } }
-  @media screen and (max-width: 1199px) and (max-height: 700px) {
+  @media screen and (max-width: 1199px) and (orientation: portrait) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 55vw; } }
   @media screen and (max-width: 991px) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 75vw; } }
-  @media screen and (max-width: 991px) and (max-height: 600px) {
+  @media screen and (max-width: 991px) and (orientation: portrait) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 45vw; } }
   @media screen and (max-width: 767px) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 95vw; } }
-  @media screen and (max-width: 767px) and (max-height: 500px) {
+  @media screen and (max-width: 767px) and (orientation: portrait) {
     .ta8hcnTD9AXaFgfnhOX7r {
       width: 45vw; } }
 

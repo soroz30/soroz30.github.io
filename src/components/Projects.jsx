@@ -4,7 +4,8 @@ import EventListener from 'react-event-listener';
 import styles from 'stylesheets/Projects';
 import Animate from 'react-move/Animate';
 import MediaQuery from 'react-responsive';
-import ChevronDown from 'react-icons/lib/fa/chevron-down';
+import AngleDoubleLeft from 'react-icons/lib/fa/angle-double-left';
+import AngleDoubleRight from 'react-icons/lib/fa/angle-double-right';
 
 export default class Projects extends Component {
     state = {
@@ -31,6 +32,18 @@ export default class Projects extends Component {
         const numberOfGradients = 4;
         this.setState({ inactiveChange: true, showProject: false }, () => {;
             this.increaseIterator();
+            const slideNumber = this.state.iterator % numberOfGradients;
+            this.props.handleEvent(`projects${slideNumber}`);
+            setTimeout(() => this.setState({ inactiveChange: false }), 1000);
+        });
+    }
+
+    prevSlide = e => {
+        e.preventDefault();
+        if (this.state.inactiveChange) { return; }
+        const numberOfGradients = 4;
+        this.setState({ inactiveChange: true, showProject: false }, () => {;
+            this.decreaseIterator();
             const slideNumber = this.state.iterator % numberOfGradients;
             this.props.handleEvent(`projects${slideNumber}`);
             setTimeout(() => this.setState({ inactiveChange: false }), 1000);
@@ -85,9 +98,8 @@ export default class Projects extends Component {
                             else {
                                 return (
                                     <div>
-                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
-                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
-                                        <ChevronDown className={styles.chevron}  onClick={this.handleClick}/>
+                                        <AngleDoubleLeft className={styles['angle-double']} size={36} onClick={this.prevSlide}/>
+                                        <AngleDoubleRight className={styles['angle-double']} size={36} onClick={this.handleClick}/>
                                     </div>
                                 )
                             }

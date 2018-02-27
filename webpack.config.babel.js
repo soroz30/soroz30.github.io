@@ -35,6 +35,7 @@ const config = {
     },
     devServer: {
         contentBase: './',
+        historyApiFallback: true,
         hot: true
     },
     module: {

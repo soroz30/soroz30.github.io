@@ -15,6 +15,7 @@ export default class Projects extends Component {
     }
 
 	handleWheel = e => {
+        e.preventDefault();
         if (this.state.inactiveChange) { return; }
         const numberOfGradients = 4;
         this.setState({ inactiveChange: true, showProject: false });
@@ -25,6 +26,7 @@ export default class Projects extends Component {
 	}
 
     handleClick = e => {
+        e.preventDefault();
         if (this.state.inactiveChange) { return; }
         const numberOfGradients = 4;
         this.setState({ inactiveChange: true, showProject: false }, () => {;

@@ -190,10 +190,14 @@ h1 {
 * {
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
   font-family: 'Raleway', sans-serif;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  height: 100%; }
 
 ._1IcdNlkyXgbo9fbWzH8ROk {
   position: absolute;
@@ -207,4 +211,4 @@ body {
 
 ._1IRt_ozmSQTA8jJ4stLFaN {
   position: relative;
-  height: 100vh; }
+  height: 100%; }

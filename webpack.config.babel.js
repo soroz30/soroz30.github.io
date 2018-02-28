@@ -5,13 +5,17 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
 const env = process.env.NODE_ENV || 'development';
 
 let plugins = [
                 new webpack.NamedModulesPlugin(),
                 new webpack.HotModuleReplacementPlugin(),
-                new ExtractTextPlugin('styles.css'),
+                new ExtractTextPlugin({
+                    filename: 'styles.css',
+                    allChunks: true
+                }),
                 new HtmlWebpackPlugin({
                     template: './src/index.html'
                 })
@@ -54,10 +58,18 @@ const config = {
                         {
                             loader: 'css-loader',
                             options: {
-                                modules: true
+                                modules: true,
+                                importLoaders: 1
                             }
                         },
-                        'postcss-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                              plugins: () => autoprefixer({
+                                browsers: ['last 3 versions', '> 1%']
+                              })
+                            }
+                        },
                         'sass-loader'
                 ]
                 }))

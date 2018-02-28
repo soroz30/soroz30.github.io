@@ -13,7 +13,7 @@ const Project = ({projectNumber}) => {
 	return (
         <div>
             <figure className={styles.figure}>
-                <a href={gitPage}><img src={img} className={styles.image} alt="Project"/></a>
+                <a href={gitPage}><img src={`dist/${img}`} className={styles.image} alt="Project"/></a>
                 <figcaption
                     className={styles.figcaption}>
                     {description}

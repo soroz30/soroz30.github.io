@@ -57,7 +57,8 @@ const config = {
                                 modules: true
                             }
                         },
-                        { loader: 'sass-loader' }
+                        'postcss-loader',
+                        'sass-loader'
                 ]
                 }))
             },

@@ -64,7 +64,12 @@ const config = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
-                    'file-loader',
+                     {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 200000
+                        }
+                    },
                     {
                         loader: 'image-webpack-loader',
                         options: {

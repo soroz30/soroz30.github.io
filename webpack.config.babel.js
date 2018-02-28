@@ -5,7 +5,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -15,10 +14,7 @@ let plugins = [
                 new ExtractTextPlugin('styles.css'),
                 new HtmlWebpackPlugin({
                     template: './src/index.html'
-                }),
-                new CopyWebpackPlugin([
-                    {from:'src/images',to:'images'}
-                ])
+                })
               ]
 
 if (env === 'production') {

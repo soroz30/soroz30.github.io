@@ -4,7 +4,6 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
-import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 
 const env = process.env.NODE_ENV || 'development';
@@ -26,8 +25,7 @@ if (env === 'production') {
         new webpack.optimize.UglifyJsPlugin(),
         new OptimizeJsPlugin({
             sourceMap: false
-        }),
-        new OptimizeCssAssetsPlugin()
+        })
     );
 }
 
@@ -59,7 +57,8 @@ const config = {
                             loader: 'css-loader',
                             options: {
                                 modules: true,
-                                importLoaders: 1
+                                importLoaders: 1,
+                                minimize: true
                             }
                         },
                         {

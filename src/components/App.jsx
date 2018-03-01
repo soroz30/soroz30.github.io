@@ -9,9 +9,15 @@ import styles from 'stylesheets/App';
 import Granim from './Granim';
 import granimData from '../data/granimData';
 import { Helmet } from 'react-helmet';
-import images from '../data/imagesData';
 
-console.log(images)
+const importAll = (r) => {
+  let images = {};
+  r.keys().map((item, index) => { images[item.slice(2, -4).toLowerCase().replace(/\W/g, '')] = `dist/${r(item)}`; });
+  return images;
+}
+
+const images = importAll(require.context('../images', false, /\.jpg$/));
+
 
 class App extends Component {
     state = {

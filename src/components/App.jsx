@@ -18,7 +18,6 @@ const importAll = (r) => {
 
 const images = importAll(require.context('../images', false, /\.jpg$/));
 
-
 class App extends Component {
     state = {
         granim: 'home'

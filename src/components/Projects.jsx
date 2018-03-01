@@ -25,14 +25,9 @@ class Projects extends Component {
         e.wheelDelta < 0 ? this.changeSlide('next') : this.changeSlide('prev');
 	}
 
-    nextSlide = e => {
+    handleClick = () => {
         if (this.state.disabledChange) { return; }
         this.changeSlide('next');
-    }
-
-    prevSlide = e => {
-        if (this.state.disabledChange) { return; }
-        this.changeSlide('prev');
     }
 
     changeSlide = (direction) => {
@@ -98,7 +93,7 @@ class Projects extends Component {
                     <MediaQuery minWidth={992}>
                         {(matches) => {
                             if (matches) 
-                                return <span className={styles.scroll} onClick={this.nextSlide}></span>
+                                return <span className={styles.scroll} onClick={this.handleClick}></span>
                             else {
                                 return (
                                     <div>

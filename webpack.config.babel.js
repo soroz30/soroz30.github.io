@@ -76,10 +76,16 @@ const config = {
             {
                 test: /\.(gif|png|jpe?g|svg)$/i,
                 use: [
-                     {
+                    {
                         loader: 'url-loader',
                         options: {
                             limit: 8024
+                        }
+                    },
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images/'
                         }
                     },
                     {

@@ -28,7 +28,6 @@ class App extends Component {
                 <Helmet>
                     <meta charSet='utf-8' />
                     <title>Portfolio</title>
-                    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"></link>
                 </Helmet>
                 <Granim 
                     defaultStateName={this.state.granim}

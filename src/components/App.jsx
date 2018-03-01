@@ -8,7 +8,10 @@ import { hot } from 'react-hot-loader';
 import styles from 'stylesheets/App';
 import Granim from './Granim';
 import granimData from '../data/granimData';
-import {Helmet} from 'react-helmet';
+import { Helmet } from 'react-helmet';
+import images from '../data/imagesData';
+
+console.log(images)
 
 class App extends Component {
     state = {
@@ -38,7 +41,10 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/projects" render={() => {
                                 return (
-                                    <Projects handleEvent={this.handleEvent} />
+                                    <Projects
+                                        handleEvent={this.handleEvent}
+                                        images={images}
+                                    />
                                 )
                             }} />
                             <Route path="/contact" component={Contact} />

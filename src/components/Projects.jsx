@@ -9,7 +9,8 @@ import AngleDoubleLeft from 'react-icons/lib/fa/angle-double-left';
 import AngleDoubleRight from 'react-icons/lib/fa/angle-double-right';
 
 const propTypes = {
-    handleEvent: PropTypes.func.isRequired
+    handleEvent: PropTypes.func.isRequired,
+    images: PropTypes.object.isRequired
 }
 
 class Projects extends Component {
@@ -37,27 +38,33 @@ class Projects extends Component {
     changeSlide = (direction) => {
         const numberOfGradients = 4;
         this.setState({ disabledChange: true, showProject: false }, () => {
-            direction === 'next' ? this.increaseIterator() : this.decreaseIterator();
-            const slideNumber = this.state.iterator % numberOfGradients;
-            this.props.handleEvent(`projects${slideNumber}`);
+            direction === 'next' ? this.nextSlide() : this.prevSlide();
             setTimeout(() => this.setState({ disabledChange: false }), 1000);
         });
     }
 
-    increaseIterator = () => {
+    nextSlide = () => {
+        const numberOfGradients = 4;
         const slidesArrayLength = 5;
         if (this.state.iterator === slidesArrayLength) {
+            this.props.handleEvent('projects0');
             this.setState({ iterator: 0, showProject: true });
         } else {
+            const slideNumber = (this.state.iterator + 1) % numberOfGradients;
+            this.props.handleEvent(`projects${slideNumber}`);
             this.setState({ iterator: this.state.iterator + 1, showProject: true });
         }
     }
 
-    decreaseIterator = () => {
+    prevSlide = () => {
+        const numberOfGradients = 4;
         const slidesArrayLength = 5;
         if (this.state.iterator === 0) {
+            this.props.handleEvent('projects0');
             this.setState({ iterator: slidesArrayLength, showProject: true });
         } else {
+            const slideNumber = (this.state.iterator - 1) % numberOfGradients;
+            this.props.handleEvent(`projects${slideNumber}`);
             this.setState({ iterator: this.state.iterator - 1, showProject: true });
         }
     }
@@ -81,6 +88,7 @@ class Projects extends Component {
                             <div style={{opacity}}>
         		                <Project
                                     projectNumber={this.state.iterator}
+                                    images={this.props.images}
                                 />
                             </div>
                         )

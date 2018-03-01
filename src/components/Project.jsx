@@ -5,15 +5,19 @@ import projectsData from '../data/projectsData';
 import GithubLogo from 'react-icons/lib/fa/github';
 
 const propTypes = {
-    projectNumber: PropTypes.number.isRequired
+    projectNumber: PropTypes.number.isRequired,
+    images: PropTypes.object.isRequired
 }
 
-const Project = ({projectNumber}) => {
-    const { img, description, gitPage, gitCode } = projectsData[projectNumber];
+const Project = ({projectNumber, images}) => {
+    const { description, gitPage, gitCode } = projectsData[projectNumber];
+    const imageKey = description.toLowerCase().replace(/\W/g, '');
+    console.log(imageKey);
+    console.log(images)
 	return (
         <div>
             <figure className={styles.figure}>
-                <a href={gitPage}><img src={img} className={styles.image} alt="Project"/></a>
+                <a href={gitPage}><img src={images[imageKey]} className={styles.image} alt="Project"/></a>
                 <figcaption
                     className={styles.figcaption}>
                     {description}

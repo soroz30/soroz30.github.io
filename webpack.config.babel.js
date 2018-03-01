@@ -79,7 +79,7 @@ const config = {
                      {
                         loader: 'url-loader',
                         options: {
-                            limit: 200000
+                            limit: 8024
                         }
                     },
                     {

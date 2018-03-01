@@ -29,8 +29,8 @@ const granimData = {
     },
     projects3: {
         gradients: [
-            ['#32002A', '#280046'],
-            ['#280046', '#32002A']
+            ['#000A2D', '#00224B'],
+            ['#00224B', '#000A2D']
         ],
         transitionSpeed: 2000
     },
@@ -41,6 +41,6 @@ const granimData = {
         ],
         transitionSpeed: 2000
     }
-};
+}
 
 export default granimData;

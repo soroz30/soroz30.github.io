@@ -13,7 +13,7 @@ const ContactDetails = () => {
             </div>
             <LocationMap
                 isMarkerShown
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb9crGw5_tnMCBreJ8Mla84pZFH-X0iTc&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div className={styles['loading-element']} />}
                 containerElement={<div className={styles['map-container']} />}
                 mapElement={<div className={styles['map-element']} />}

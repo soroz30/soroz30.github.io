@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import Projects from './Projects';
 import TopNav from './TopNav';
-import Contact from './Contact';
+import Home from './Home/Home';
+import About from './About/About';
+import Projects from './Projects/Projects';
+import Contact from './Contact/Contact';
+import Footer from './Footer';
 import { hot } from 'react-hot-loader';
 import styles from 'stylesheets/App';
 import Granim from './Granim';
@@ -24,7 +26,7 @@ class App extends Component {
     }
 
     handleEvent = (granimState) => {
-        this.setState({granim: granimState});
+        this.setState({ granim: granimState });
     }
 
     render = () => {
@@ -43,6 +45,7 @@ class App extends Component {
                         <TopNav handleEvent={this.handleEvent} />
                         <Switch>
                             <Route exact path="/" component={Home} />
+                            <Route path="/about" component={About} />
                             <Route path="/projects" render={() => {
                                 return (
                                     <Projects
@@ -52,7 +55,9 @@ class App extends Component {
                                 )
                             }} />
                             <Route path="/contact" component={Contact} />
+                            <Route component={Home} />
                         </Switch>
+                        <Footer />
                     </div>
             </div>
         );

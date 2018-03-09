@@ -17,6 +17,12 @@ const TopNav = (props) => {
             	onClick={() => props.handleEvent("home")}
             >Home</NavLink>
             <NavLink
+            	to="/about"
+            	className={styles.link}
+            	activeClassName={styles.active}
+            	onClick={() => props.handleEvent("about")}
+            >About</NavLink>
+            <NavLink
             	to="/projects"
             	className={styles.link}
             	activeClassName={styles.active}

@@ -1,40 +1,20 @@
 @import 'Variables'
 
+.projects
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  z-index: 2
+
 .navigation
-  bottom: 5%
+  color: #fff
+  top: 105%
   position: absolute
   left: 0
   right: 0
   @media #{$max-md}
-    bottom: 100px
-
-.scroll
-  animation: scroll-background 2s
-  animation-iteration-count: infinite
-  background: rgba(255, 255, 255, 0.15)
-  border: 1px solid #fff
-  border-radius: 10px
-  display: block
-  margin: auto
-  height: 40px
-  position: relative
-  width: 25px
-  &:before
-    content: ''
-    height: 8px
-    position: absolute
-    right: 11px
-    top: 8px
-    width: 1px
-    background: #fff
-
-@keyframes scroll-background
-  0%
-    background: rgba(255, 255, 255, 0.15)
-  50%
-    background: rgba(255, 255, 255, 0)
-  100%
-    background: rgba(255, 255, 255, 0.15)
+    top: auto
 
 .angle-double
   color: #fff

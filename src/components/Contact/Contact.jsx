@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from 'stylesheets/Contact';
-import Form from './Form';
+import ContactForm from './ContactForm';
+import ContactDetails from './ContactDetails';
 
 const Contact = () => {
     return (
         <div className={styles.contact}>
-            <Form />
-            <span>Tel: 517-243-763</span>
+        	<ContactDetails />
+            <ContactForm />
         </div>
     );
 };

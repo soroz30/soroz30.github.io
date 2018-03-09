@@ -6,6 +6,12 @@ const granimData = {
         ],
         transitionSpeed: 2000
     },
+    about: {
+        gradients: [
+            ['#29323c', '#485563']
+        ],
+        transitionSpeed: 2000
+    },
     projects0: {
         gradients: [
             ['#2E002F', '#2A005C'],
@@ -36,8 +42,8 @@ const granimData = {
     },
     contact: {
         gradients: [
-            ['#096563', '#08B1AE'],
-            ['#08B1AE', '#096563']
+            ['#000A2D', '#00224B'],
+            ['#00224B', '#000A2D']
         ],
         transitionSpeed: 2000
     }

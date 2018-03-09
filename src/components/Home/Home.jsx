@@ -3,7 +3,9 @@ import styles from 'stylesheets/Home';
 
 const Home = () => {
     return (
-        <h1>About</h1>
+        <div className={styles.circle}>
+            <h1>Marek Koseski</h1>
+        </div>
     );
 };
 

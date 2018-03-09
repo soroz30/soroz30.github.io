@@ -4,7 +4,6 @@ import Project from './Project';
 import EventListener from 'react-event-listener';
 import styles from 'stylesheets/Projects';
 import Animate from 'react-move/Animate';
-import MediaQuery from 'react-responsive';
 import AngleDoubleLeft from 'react-icons/lib/fa/angle-double-left';
 import AngleDoubleRight from 'react-icons/lib/fa/angle-double-right';
 
@@ -16,18 +15,31 @@ const propTypes = {
 class Projects extends Component {
     state = {
         iterator: 0,
-        disabledChange: false,
+        disabledChange: true,
         showProject: true
     }
 
-	handleWheel = e => {
+    componentWillMount = () => {
+        sessionStorage.getItem('iterator') && this.setState({
+            iterator: JSON.parse(sessionStorage.getItem('iterator'))
+        });
+        setTimeout(() => {
+            this.setState({disabledChange: false})
+        }, 1000)
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        sessionStorage.setItem('iterator', nextState.iterator);
+    }
+
+    handleWheel = e => {
         if (this.state.disabledChange) { return; }
         e.wheelDelta < 0 ? this.changeSlide('next') : this.changeSlide('prev');
 	}
 
-    handleClick = () => {
+    handleClick = (direction) => {
         if (this.state.disabledChange) { return; }
-        this.changeSlide('next');
+        this.changeSlide(direction);
     }
 
     changeSlide = (direction) => {
@@ -66,7 +78,7 @@ class Projects extends Component {
 
 	render = () => {
         return (
-		    <div>
+		    <div className={styles.projects}>
 			    <EventListener
 				    target={document}
 				    onWheel={this.handleWheel}
@@ -90,28 +102,19 @@ class Projects extends Component {
                     }}
                 </Animate>
                 <div className={styles.navigation}>
-                    <MediaQuery minWidth={992}>
-                        {(matches) => {
-                            if (matches) 
-                                return <span className={styles.scroll} onClick={this.handleClick}></span>
-                            else {
-                                return (
-                                    <div>
-                                        <AngleDoubleLeft 
-                                            className={styles["angle-double"]} 
-                                            size={36}
-                                            onClick={this.prevSlide}
-                                        />
-                                        <AngleDoubleRight
-                                            className={styles["angle-double"]}
-                                            size={36}
-                                            onClick={this.nextSlide}
-                                        />
-                                    </div>
-                                )
-                            }
-                        }}
-                    </MediaQuery>
+                    <div>
+                        <AngleDoubleLeft 
+                            className={styles["angle-double"]} 
+                            size={36}
+                            onClick={() => this.handleClick('prev')}
+                        />
+                        <AngleDoubleRight
+                            className={styles["angle-double"]}
+                            size={36}
+                            onClick={() => this.handleClick('next')}
+                        />
+                    </div>
+                    <span>Scroll or use arrows to change the project</span>
                 </div>
 		    </div>
         );

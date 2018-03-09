@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from 'stylesheets/Project';
-import projectsData from '../data/projectsData';
+import projectsData from '../../data/projectsData';
 import GithubLogo from 'react-icons/lib/fa/github';
 
 const propTypes = {

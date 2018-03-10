@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from 'stylesheets/Project';
 import projectsData from '../../data/projectsData';
-import GithubLogo from 'react-icons/lib/fa/github';
 
 const propTypes = {
     projectNumber: PropTypes.number.isRequired,
@@ -21,7 +20,6 @@ const Project = ({projectNumber, images}) => {
                     {description}
                     <a className={styles["git-link"]} href={gitCode}>
                         Github
-                        <GithubLogo size={36}/>
                     </a>
                 </figcaption>
             </figure>

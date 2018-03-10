@@ -31,6 +31,7 @@
     "react-hot-loader": "^4.0.0-rc.0",
     "react-icons": "^2.2.7",
     "react-move": "^2.7.0",
+    "react-precache-img": "^2.0.5",
     "react-router-dom": "^4.2.2",
     "react-router-page-transition": "^3.0.2",
     "recompose": "^0.26.0",

@@ -6,15 +6,21 @@
   left: 50%
   transform: translate(-50%, -50%)
   z-index: 2
-
 .navigation
-  bottom: -40px
+  top: calc((100vh - 350px) / 2)
   color: #fff
   position: absolute
-  left: 0
+  left: -72px
   right: 0
-  @media #{$max-md}
-    top: auto
+  width: calc(((100vh - 350px) * 1.4) + 144px)
+  @media screen and (min-height: 1050px)
+    top: 350px
+    width: 1124px
 
-.angle-double
-  color: #fff
+.angle-double-left
+  position: absolute
+  left: 0
+
+.angle-double-right
+  position: absolute
+  right: 0

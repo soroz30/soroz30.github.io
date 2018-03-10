@@ -10,6 +10,7 @@ import { hot } from 'react-hot-loader';
 import styles from 'stylesheets/App';
 import Granim from './Granim';
 import granimData from '../data/granimData';
+import PreCacheImg from 'react-precache-img';
 import { Helmet } from 'react-helmet';
 
 const importAll = (r) => {
@@ -19,22 +20,25 @@ const importAll = (r) => {
 }
 
 const images = importAll(require.context('../images', false, /\.jpg$/));
+const imagesPaths = Object.values(images);
 
 class App extends Component {
     state = {
         granim: 'home'
     }
 
-    handleEvent = (granimState) => {
-        this.setState({ granim: granimState });
+    componentWillMount = () => {
+        sessionStorage.getItem('granim') && this.setState({
+            granim: sessionStorage.getItem('granim')
+        });
     }
 
-    setCorrectProjectGranim = () => {
-        setTimeout(() => {
-            sessionStorage.getItem('iterator') && this.setState({
-                granim: `projects${JSON.parse(sessionStorage.getItem('iterator'))}`
-            })
-        }, 0);
+    componentWillUpdate = (nextProps, nextState) => {
+        sessionStorage.setItem('granim', nextState.granim);
+    }
+
+    handleEvent = (granimState) => {
+        this.setState({ granim: granimState });
     }
 
     render = () => {
@@ -46,6 +50,7 @@ class App extends Component {
                     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"></link>
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"></link>
                 </Helmet>
+                <PreCacheImg images={imagesPaths} />
                 <Granim 
                     defaultStateName={this.state.granim}
                     states={granimData}
@@ -57,7 +62,6 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/about" component={About} />
                             <Route path="/projects" render={() => {
-                                // this.setCorrectProjectGranim();
                                 return (
                                     <Projects
                                         handleEvent={this.handleEvent}

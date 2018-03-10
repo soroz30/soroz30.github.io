@@ -28,7 +28,7 @@ class Projects extends Component {
         }, 1000)
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    componentWillUpdate = (nextProps, nextState) => {
         sessionStorage.setItem('iterator', nextState.iterator);
     }
 
@@ -103,18 +103,20 @@ class Projects extends Component {
                 </Animate>
                 <div className={styles.navigation}>
                     <div>
-                        <AngleDoubleLeft 
-                            className={styles["angle-double"]} 
-                            size={36}
-                            onClick={() => this.handleClick('prev')}
-                        />
-                        <AngleDoubleRight
-                            className={styles["angle-double"]}
-                            size={36}
-                            onClick={() => this.handleClick('next')}
-                        />
+                        <div className={styles["angle-double-left"]}>
+                            <AngleDoubleLeft
+                                size={36}
+                                onClick={() => this.handleClick('prev')}
+                            />
+                        </div>
+                        <div className={styles["angle-double-right"]}>
+                            <AngleDoubleRight
+                                className={styles["angle-double-right"]}
+                                size={36}
+                                onClick={() => this.handleClick('next')}
+                            />
+                        </div>
                     </div>
-                    <span>Scroll or use arrows to change the project</span>
                 </div>
 		    </div>
         );

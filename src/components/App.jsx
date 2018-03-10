@@ -29,6 +29,14 @@ class App extends Component {
         this.setState({ granim: granimState });
     }
 
+    setCorrectProjectGranim = () => {
+        setTimeout(() => {
+            sessionStorage.getItem('iterator') && this.setState({
+                granim: `projects${JSON.parse(sessionStorage.getItem('iterator'))}`
+            })
+        }, 0);
+    }
+
     render = () => {
         return (
             <div>
@@ -47,6 +55,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route path="/about" component={About} />
                             <Route path="/projects" render={() => {
+                                // this.setCorrectProjectGranim();
                                 return (
                                     <Projects
                                         handleEvent={this.handleEvent}

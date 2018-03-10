@@ -37,6 +37,15 @@ class Projects extends Component {
         e.wheelDelta < 0 ? this.changeSlide('next') : this.changeSlide('prev');
 	}
 
+    keyDown = e => {
+        if (this.state.disabledChange) { return; }
+        if (e.keyCode === 39) {
+            this.changeSlide('next');
+        } else if (e.keyCode === 37) {
+            this.changeSlide('preve');
+        }
+    }
+
     handleClick = (direction) => {
         if (this.state.disabledChange) { return; }
         this.changeSlide(direction);
@@ -82,6 +91,7 @@ class Projects extends Component {
 			    <EventListener
 				    target={document}
 				    onWheel={this.handleWheel}
+                    onKeyDown={this.keyDown}
 			    />
                 <Animate
                     show={this.state.showProject}

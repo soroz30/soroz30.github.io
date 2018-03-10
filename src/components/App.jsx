@@ -43,6 +43,8 @@ class App extends Component {
                 <Helmet>
                     <meta charSet='utf-8' />
                     <title>Portfolio</title>
+                    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"></link>
                 </Helmet>
                 <Granim 
                     defaultStateName={this.state.granim}

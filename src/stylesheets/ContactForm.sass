@@ -13,7 +13,7 @@
   textarea:focus
     box-shadow: none
     outline: none !important
-    border: 1px solid gray
+    border-bottom: 1px solid #fff
   input:required,
   textarea:required
     box-shadow: none
@@ -47,7 +47,10 @@ input:-webkit-autofill
   background-color: #4BDAA5
   margin: 60px 0 0
   text-transform: uppercase
+  transition: background-color 0.5s
   padding: 10px 0
+  &:hover
+    background-color: #238D66
 
 .bottom-partial
   bottom: 0

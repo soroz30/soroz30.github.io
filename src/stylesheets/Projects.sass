@@ -16,6 +16,24 @@
   @media screen and (min-height: 1050px)
     top: 350px
     width: 1124px
+  @media #{$max-lg}
+    top: calc((100vh - 300px) / 2)
+    width: calc(((100vh - 300px) * 1.4) + 144px)
+  @media #{$max-sm}
+    top: calc((100vh - 200px) / 2)
+    width: calc(((100vh - 200px) * 1.4) + 144px)
+  @media #{$max-xs}
+    top: calc((100vh - 150px) / 2)
+    width: calc(((100vh - 150px) * 1.4) + 144px)
+  @media #{$max-xs-low-height}
+    top: calc((100vh - 200px) / 2)
+    width: calc(((100vh - 200px) * 1.4) + 144px)
+  @media #{$portrait}
+    left: 0
+    right: 0
+    top: 100%
+    margin: 0 auto
+    width: 72px
 
 .angle-double-left
   position: absolute

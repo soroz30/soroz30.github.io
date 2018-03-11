@@ -8,6 +8,10 @@
   width: 100%
   @media #{$max-md}
     bottom: 0
+  @media #{$max-sm}
+    font-size: 12px
+  @media #{$max-xs-low-height}
+    font-size: 8px
 
 .modified-footer
   border-top: 1px solid #fff
@@ -19,8 +23,11 @@
   @media #{$max-md-high-height}
     bottom: 0
   @media #{$max-xs-high-height}
-    bottom: -78px
-    
+    bottom: -66px
+    font-size: 8px
+  @media #{$max-xs-low-height}
+    font-size: 8px
+
 .container
   margin: auto
 
@@ -31,7 +38,7 @@
     bottom: 0
     margin: 8px 0
     position: absolute
-  @media #{$max-xs}
+  @media #{$portrait-max-xs}
     display: none
 
 .contact

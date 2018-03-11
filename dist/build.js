@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "016ad173c8b59113a1d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "222c4f6e6de60a066a00"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -60771,7 +60771,7 @@ _reactDom2.default.render(_react2.default.createElement(
 // removed by extract-text-webpack-plugin
 module.exports = {"container":"_2Y1QGOn-JNM_B0avjo1bbP","green":"_2fMjKEDZIGv-YeOyYjQuw","circle":"jkbHt0CoeKFRxleqjRT2n","photo":"py9dza9TE_F2OvsNxGyXO","about":"_3ARCIJvXkBLFR-4Yqi7oYk","courses":"_2CQrI7I6JDmpQQA2GXsLpv","skills":"_2iU5KfxkCjhCY6Stdzd8VX"};
     if(true) {
-      // 1520757704749
+      // 1520762038959
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60786,7 +60786,7 @@ module.exports = {"container":"_2Y1QGOn-JNM_B0avjo1bbP","green":"_2fMjKEDZIGv-Ye
 // removed by extract-text-webpack-plugin
 module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Modified-Granim":"_2Yzhqh6EQ2gOH-1sY7E0FG","Portfolio":"_1IRt_ozmSQTA8jJ4stLFaN"};
     if(true) {
-      // 1520757704741
+      // 1520762038942
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60801,7 +60801,7 @@ module.exports = {"Granim":"_1IcdNlkyXgbo9fbWzH8ROk","Modified-Granim":"_2Yzhqh6
 // removed by extract-text-webpack-plugin
 module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
     if(true) {
-      // 1520757704753
+      // 1520762038952
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60816,7 +60816,7 @@ module.exports = {"contact":"_2U76FwWsg89nVyBrj5S0fs"};
 // removed by extract-text-webpack-plugin
 module.exports = {"container":"h3gWuPsn07W6vi8bTW6Q7","circle":"_3SKp4HJ6lo_uurNRNnigz_","contact":"_3E3dMHsfhRrL09VaqLcA3t","map-container":"_3HA8Z-B3ickWENJU6orgLc","loading-element":"_1a8JJZAvH4JZEqO9vXA1IF","map-element":"DbAJk1zg8zeUJ2B3C0hCj"};
     if(true) {
-      // 1520757704760
+      // 1520762038971
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60831,7 +60831,7 @@ module.exports = {"container":"h3gWuPsn07W6vi8bTW6Q7","circle":"_3SKp4HJ6lo_uurN
 // removed by extract-text-webpack-plugin
 module.exports = {"form":"_3HaEviSm3H_OGvzSuMY2Qk","text-input":"_1gHK93iIkglJd2nhRFNATB","label-message":"_1ZdwQ9xo-SAEl8vb-4wDcW","submit-input":"_1DpfOvg22tqxV80bXxlxGO","bottom-partial":"_1PFOhiUCxXTEUfa3g0NOat"};
     if(true) {
-      // 1520757704764
+      // 1520762038983
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60846,7 +60846,7 @@ module.exports = {"form":"_3HaEviSm3H_OGvzSuMY2Qk","text-input":"_1gHK93iIkglJd2
 // removed by extract-text-webpack-plugin
 module.exports = {"footer":"_3RiN72-m7oVjenYu6jumH7","modified-footer":"_3bu8NdEByb1zwAj_Q_pFSv","container":"_1hl7sfEWgN7HnCSwOz8JTQ","reserved":"_1QrAHJf-M983D61MWrWlbF","contact":"tYxQDL3mCfDbNGTXC99BL"};
     if(true) {
-      // 1520757704734
+      // 1520762038945
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60861,7 +60861,7 @@ module.exports = {"footer":"_3RiN72-m7oVjenYu6jumH7","modified-footer":"_3bu8NdE
 // removed by extract-text-webpack-plugin
 module.exports = {"circle":"_2VWMPrx7fJHfBgjFQyJR5g"};
     if(true) {
-      // 1520757704745
+      // 1520762038954
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60876,7 +60876,7 @@ module.exports = {"circle":"_2VWMPrx7fJHfBgjFQyJR5g"};
 // removed by extract-text-webpack-plugin
 module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhOX7r","figcaption":"_2l299Yir3ZKjea6pvcVTeo","git-link":"_1558Lyd9eCwaidBMlYv5U0"};
     if(true) {
-      // 1520757704769
+      // 1520762038978
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60891,7 +60891,7 @@ module.exports = {"figure":"_3DYaSue-wLEVGE3cvZ2AmX","image":"ta8hcnTD9AXaFgfnhO
 // removed by extract-text-webpack-plugin
 module.exports = {"projects":"_2JbVIq8Z30lQeAr1mSjbi4","navigation":"_1i91PpK9o7Px2nYQrLlXMb","angle-double-left":"_1u0ieC1Ez1v835sR-Jh0rD","angle-double-right":"_3fmbl6WhW-zAIo6kTJJ4dB"};
     if(true) {
-      // 1520757704756
+      // 1520762038975
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -60906,7 +60906,7 @@ module.exports = {"projects":"_2JbVIq8Z30lQeAr1mSjbi4","navigation":"_1i91PpK9o7
 // removed by extract-text-webpack-plugin
 module.exports = {"Top-Nav":"_3Wd9iMpbiqskBX6YO5qMgL","link":"_29s8jSZqSEI3Vcl3L218eV","active":"_2F4Qi0K5dDiYdExIlJ4KBk"};
     if(true) {
-      // 1520757704738
+      // 1520762038937
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

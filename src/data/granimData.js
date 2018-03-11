@@ -8,7 +8,8 @@ const granimData = {
     },
     about: {
         gradients: [
-            ['#29323c', '#485563']
+            ['#29323c', '#485563'],
+            ['#485563', '#29323c']
         ],
         transitionSpeed: 2000
     },

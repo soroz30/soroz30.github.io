@@ -12,6 +12,7 @@ import Granim from './Granim';
 import granimData from '../data/granimData';
 import PreCacheImg from 'react-precache-img';
 import { Helmet } from 'react-helmet';
+import MediaQuery from 'react-responsive';
 
 const importAll = (r) => {
   let images = {};
@@ -28,13 +29,27 @@ class App extends Component {
     }
 
     componentWillMount = () => {
-        sessionStorage.getItem('granim') && this.setState({
-            granim: sessionStorage.getItem('granim')
-        });
-    }
-
-    componentWillUpdate = (nextProps, nextState) => {
-        sessionStorage.setItem('granim', nextState.granim);
+        const path = window.location.hash.match(/#\/(\w*)/)[1]
+        switch (path) {
+            case 'about':
+                this.setState({ granim: 'about' })
+                break
+            case 'contact':
+                this.setState({ granim: 'contact' });
+                break
+            case 'projects':
+                const projectIterator = sessionStorage.getItem('iterator');
+                const numberOfGradients = 4;
+                const slideNumber = projectIterator % numberOfGradients;
+                if (projectIterator) {
+                    this.setState({ granim: `projects${slideNumber}`});
+                } else {
+                    this.setState({ granim: 'projects0' });
+                }
+                break
+            default:
+                this.setState({ granim: 'home' });
+        }
     }
 
     handleEvent = (granimState) => {
@@ -51,14 +66,28 @@ class App extends Component {
                     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"></link>
                 </Helmet>
                 <PreCacheImg images={imagesPaths} />
-                <Granim 
-                    defaultStateName={this.state.granim}
-                    states={granimData}
-                    granimClass={styles.Granim}
-                ></Granim>
+                <MediaQuery query="(max-width: 991px)">
+                    {(matches) => {
+                        if (matches) {
+                            const modified = this.state.granim.match(/(about|contact)/);
+                            console.log(modified)
+                            return <Granim 
+                                defaultStateName={this.state.granim}
+                                states={granimData}
+                                granimClass={ modified ? styles['Modified-Granim'] : styles.Granim }
+                            ></Granim>
+                        } else {
+                            return <Granim 
+                                defaultStateName={this.state.granim}
+                                states={granimData}
+                                granimClass={styles.Granim}
+                            ></Granim>
+                        }
+                    }}
+                </MediaQuery>
                     <div className={styles.Portfolio}>
                         <TopNav handleEvent={this.handleEvent} />
-                        <Switch>
+                        <Switch >
                             <Route exact path="/" component={Home} />
                             <Route path="/about" component={About} />
                             <Route path="/projects" render={() => {
@@ -72,7 +101,15 @@ class App extends Component {
                             <Route path="/contact" component={Contact} />
                             <Route component={Home} />
                         </Switch>
-                        <Footer />
+                        <MediaQuery query="(max-width: 991px)">
+                            {(matches) => {
+                                if (matches) {
+                                    return <Footer modified={this.state.granim.match(/(about|contact)/)}/>
+                                } else {
+                                    return <Footer />
+                                }
+                            }}
+                        </MediaQuery>
                     </div>
             </div>
         );

@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from 'stylesheets/Footer';
 
-const Footer = () => {
+const Footer = ({modified}) => {
 	return (
-		<footer className={styles.footer}>
+		<footer className={modified ? styles['modified-footer'] : styles.footer}>
             <div className={styles.container}>
                 <div className={styles.reserved}>
                     <p>2018, Marek Koseski, All Rights Reserved</p>

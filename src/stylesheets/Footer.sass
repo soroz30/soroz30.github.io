@@ -1,10 +1,26 @@
+@import 'Variables'
+
 .footer
   border-top: 1px solid #fff
   bottom: 5px
   font-family: 'Poiret One', cursive
   position: absolute
   width: 100%
+  @media #{$max-md}
+    bottom: 0
 
+.modified-footer
+  border-top: 1px solid #fff
+  font-family: 'Poiret One', cursive
+  position: absolute
+  width: 100%
+  @media #{$max-md}
+    bottom: -78px
+  @media #{$max-md-high-height}
+    bottom: 0
+  @media #{$max-xs-high-height}
+    bottom: -78px
+    
 .container
   margin: auto
 
@@ -15,6 +31,8 @@
     bottom: 0
     margin: 8px 0
     position: absolute
+  @media #{$max-xs}
+    display: none
 
 .contact
   color: #fff

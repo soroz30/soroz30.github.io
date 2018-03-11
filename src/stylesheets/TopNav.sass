@@ -3,12 +3,12 @@
 .Top-Nav
   font-family: 'Poiret One', cursive
   padding: 20px 0 0
-  @media #{$max-sm}
+  @media #{$max-lg}
     padding: 10px 0 0
 
 .link
   color: #fff
-  font-size: 20px
+  font-size: 32px
   padding: 0 75px
   text-decoration: none
   text-transform: uppercase
@@ -17,11 +17,19 @@
   	color: #000
   	background: #fff
   	outline: 1px solid #fff
+  @media #{$max-xl}
+    font-size: 24px
+  @media #{$max-lg}
+    padding: 0 55px
+  @media #{$max-md}
+    padding: 0 35px
   @media #{$max-sm}
-    display: inline-block
-    margin: 0 0 20px
     font-size: 16px
-    padding: 0 50px
+    margin: 10px 0 0
+  @media #{$max-xs}
+    display: inline-block
+    margin: 10px 0 0
+    width: 50%
 
 .active
   border: 1px solid #fff

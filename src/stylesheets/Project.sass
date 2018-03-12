@@ -6,22 +6,22 @@
 .image
   height: calc(100vh - 350px)
   max-height: 700px
-  width: calc((100vh - 350px) * 1.4)
+  width: calc((100vh - 350px) * #{$image-proportion})
   max-width: 980px
   @media #{$max-lg}
     height: calc(100vh - 300px)
-    max-height: calc(90vw / 1.4)
-    width: calc((100vh - 300px) * 1.4)
+    max-height: calc(90vw / #{$image-proportion})
+    width: calc((100vh - 300px) * #{$image-proportion})
     max-width: 90vw
   @media #{$max-sm}
     height: calc(100vh - 200px)
-    width: calc((100vh - 200px) * 1.4)
+    width: calc((100vh - 200px) * #{$image-proportion})
   @media #{$max-xs}
     height: calc(100vh - 150px)
-    width: calc((100vh - 150px) * 1.4)
+    width: calc((100vh - 150px) * #{$image-proportion})
   @media #{$max-xs-low-height}
     height: calc(100vh - 200px)
-    width: calc((100vh - 200px) * 1.4)
+    width: calc((100vh - 200px) * #{$image-proportion})
 
 .figcaption
   color: #fff

@@ -63,31 +63,43 @@ class App extends Component {
                     <meta charSet='utf-8' />
                     <title>Portfolio</title>
                     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"></link>
-                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet"></link>
                 </Helmet>
                 <PreCacheImg images={imagesPaths} />
-                <MediaQuery query="(max-width: 991px)">
-                    {(matches) => {
-                        if (matches) {
-                            const modified = this.state.granim.match(/(about|contact)/);
-                            return <Granim 
-                                defaultStateName={this.state.granim}
-                                states={granimData}
-                                granimClass={ modified ? styles['Modified-Granim'] : styles.Granim }
-                            ></Granim>
-                        } else {
-                            return <Granim 
-                                defaultStateName={this.state.granim}
-                                states={granimData}
-                                granimClass={styles.Granim}
-                            ></Granim>
-                        }
-                    }}
-                </MediaQuery>
+                {  
+                    this.state.granim !== 'home' ? (
+                        <MediaQuery query="(max-width: 991px)">
+                            {(matches) => {
+                                if (matches) {
+                                    const modified = this.state.granim.match(/(about|contact)/);
+                                    return <Granim 
+                                        defaultStateName={this.state.granim}
+                                        states={granimData}
+                                        granimClass={ modified ? styles['Modified-Granim'] : styles.Granim }
+                                    ></Granim>
+                                } else {
+                                    return <Granim 
+                                        defaultStateName={this.state.granim}
+                                        states={granimData}
+                                        granimClass={styles.Granim}
+                                    ></Granim>
+                                }
+                            }}
+                        </MediaQuery>
+                    )
+                    :
+                        null
+                }
                     <div className={styles.Portfolio}>
                         <TopNav handleEvent={this.handleEvent} />
                         <Switch >
-                            <Route exact path="/" component={Home} />
+                            <Route exact path="/" render={() => {
+                                return (
+                                    <Home
+                                        handleEvent={this.handleEvent}
+                                    />
+                                )
+                            }} />
                             <Route path="/about" component={About} />
                             <Route path="/projects" render={() => {
                                 return (

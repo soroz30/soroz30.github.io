@@ -8,7 +8,7 @@ const propTypes = {
     images: PropTypes.object.isRequired
 }
 
-const Project = ({projectNumber, images}) => {
+const Project = ({ projectNumber, images }) => {
     const { description, gitPage, gitCode } = projectsData[projectNumber];
     const imageKey = description.toLowerCase().replace(/\W/g, '');
 	return (

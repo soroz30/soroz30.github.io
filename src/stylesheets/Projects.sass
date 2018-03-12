@@ -10,24 +10,24 @@
   top: calc((100vh - 350px) / 2)
   color: #fff
   position: absolute
-  left: -72px
+  left: -#{$arrow-width}
   right: 0
-  width: calc(((100vh - 350px) * 1.4) + 144px)
+  width: calc(((100vh - 350px) * #{$image-proportion}) + #{$two-arrows-width})
   @media screen and (min-height: 1050px)
     top: 350px
     width: 1124px
   @media #{$max-lg}
     top: calc((100vh - 300px) / 2)
-    width: calc(((100vh - 300px) * 1.4) + 144px)
+    width: calc(((100vh - 300px) * #{$image-proportion}) + #{$two-arrows-width})
   @media #{$max-sm}
     top: calc((100vh - 200px) / 2)
-    width: calc(((100vh - 200px) * 1.4) + 144px)
+    width: calc(((100vh - 200px) * #{$image-proportion}) + #{$two-arrows-width})
   @media #{$max-xs}
     top: calc((100vh - 150px) / 2)
-    width: calc(((100vh - 150px) * 1.4) + 144px)
+    width: calc(((100vh - 150px) * #{$image-proportion}) + #{$two-arrows-width})
   @media #{$max-xs-low-height}
     top: calc((100vh - 200px) / 2)
-    width: calc(((100vh - 200px) * 1.4) + 144px)
+    width: calc(((100vh - 200px) * #{$image-proportion}) + #{$two-arrows-width})
   @media #{$portrait}
     left: 0
     right: 0

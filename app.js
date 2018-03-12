@@ -28,9 +28,7 @@ var send = function (res, email, name, text) {
         text: text
     }
     
-    transporter.sendMail(message, function() {
-        redirect('/#/contact/success');
-    });
+    transporter.sendMail(message);
 }
 
 app.post('/contact', function(req, res) {

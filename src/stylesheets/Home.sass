@@ -1,22 +1,22 @@
 .circle
-  border: 1px solid #4BDAA5
+  border: 1px solid #fff
   border-radius: 50%
-  cursor: default
+  cursor: pointer
   position: absolute
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
   height: 400px
   width: 400px
-  transition: background-color 0.75s, box-shadow 0.75s
+  transition: border 0.75s
   &:hover
-  	box-shadow: 0px 0px 100px 5px rgba(75,218,165,1)
-  	background-color: #4BDAA5
+  	border: 1px solid #4BDAA5
   	h1
-  	  color: #000A2D
+      color: #4BDAA5
+
 
 h1
-  color: #4BDAA5
+  color: #fff
   font-size: 48px
   font-weight: 300
   margin: 0
@@ -28,3 +28,8 @@ h1
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
+
+.video
+  position: fixed
+  top: 0
+  left: 0

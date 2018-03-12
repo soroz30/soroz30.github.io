@@ -16,7 +16,7 @@ import MediaQuery from 'react-responsive';
 
 const importAll = (r) => {
   let images = {};
-  r.keys().map((item, index) => { images[item.slice(2, -4).toLowerCase().replace(/\W/g, '')] = `dist/${r(item)}`; });
+  r.keys().map((item, index) => { images[item.slice(2, -4).toLowerCase().replace(/\W/g, '')] = r(item); });
   return images;
 }
 
@@ -63,14 +63,13 @@ class App extends Component {
                     <meta charSet='utf-8' />
                     <title>Portfolio</title>
                     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"></link>
-                    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"></link>
+                    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet"></link>
                 </Helmet>
                 <PreCacheImg images={imagesPaths} />
                 <MediaQuery query="(max-width: 991px)">
                     {(matches) => {
                         if (matches) {
                             const modified = this.state.granim.match(/(about|contact)/);
-                            console.log(modified)
                             return <Granim 
                                 defaultStateName={this.state.granim}
                                 states={granimData}

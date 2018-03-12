@@ -36,7 +36,7 @@ const config = {
         filename: 'build.js'
     },
     devServer: {
-        contentBase: './',
+        contentBase: './dist',
         historyApiFallback: true,
         hot: true
     },

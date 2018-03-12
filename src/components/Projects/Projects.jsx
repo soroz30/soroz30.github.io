@@ -23,13 +23,17 @@ class Projects extends Component {
         sessionStorage.getItem('iterator') && this.setState({
             iterator: JSON.parse(sessionStorage.getItem('iterator'))
         });
-        setTimeout(() => {
+        this.disabledChange = setTimeout(() => {
             this.setState({disabledChange: false})
         }, 1000)
     }
 
     componentWillUpdate = (nextProps, nextState) => {
         sessionStorage.setItem('iterator', nextState.iterator);
+    }
+
+    componentWillUnmount = () => {
+        clearTimeout(this.disabledChange);
     }
 
     handleWheel = e => {
@@ -55,7 +59,7 @@ class Projects extends Component {
         const numberOfGradients = 4;
         this.setState({ disabledChange: true, showProject: false }, () => {
             direction === 'next' ? this.nextSlide() : this.prevSlide();
-            setTimeout(() => this.setState({ disabledChange: false }), 1000);
+            this.disabledChange = setTimeout(() => this.setState({ disabledChange: false }), 1000);
         });
     }
 

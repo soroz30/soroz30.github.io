@@ -12,9 +12,13 @@ class ContactDetails extends Component {
     }
 
     delayedShowMarker = () => {
-        setTimeout(() => {
+        this.showMarker = setTimeout(() => {
             this.setState({ isMarkerShown: true })
         }, 1000);
+    }
+
+    componentWillUnmount = () => {
+        clearTimeout(this.showMarker);
     }
 
 	render = () => {

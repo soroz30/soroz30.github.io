@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import OptimizeJsPlugin from 'optimize-js-plugin';
 import autoprefixer from 'autoprefixer';
+import CompressionPlugin from 'compression-webpack-plugin';
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -20,11 +21,21 @@ let plugins = [
                 })
               ]
 
-if (env === 'production') {
+if (env === 'PRODUCTION') {
     plugins.push(
-        new webpack.optimize.UglifyJsPlugin(),
+        new UglifyJsPlugin(),
         new OptimizeJsPlugin({
             sourceMap: false
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"'
+        }),
+        new CompressionPlugin({
+            asset: "build.gz.js",
+            algorithm: "gzip",
+            test: /\.js/,
+            threshold: 1024,
+            minRatio: 0.8
         })
     );
 }
@@ -40,7 +51,6 @@ const config = {
         historyApiFallback: true,
         hot: true
     },
-    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -86,7 +96,7 @@ const config = {
                         loader: 'image-webpack-loader',
                         options: {
                             mozjpeg: {
-                            progressive: false,
+                            progressive: true,
                             quality: 80
                             }
                         }

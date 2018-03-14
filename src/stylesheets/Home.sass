@@ -1,3 +1,5 @@
+@import 'Variables'
+
 .circle
   border: 1px solid #fff
   border-radius: 50%
@@ -5,7 +7,7 @@
   position: absolute
   transform: translate(-50%, -50%)
   left: 50%
-  top: 50%
+  top: calc(245px + ((100vh - 128px - 400px ) / 2))
   height: 400px
   width: 400px
   transition: border 0.75s
@@ -13,6 +15,30 @@
   	border: 1px solid #4BDAA5
   	h1
       color: #4BDAA5
+  @media #{$max-xl-low-height}
+    height: 200px
+    width: 200px
+    top: calc(135px + ((100vh - 104px - 200px ) / 2))
+  @media #{$max-lg}
+    top: calc(235px + ((100vh - 128px - 400px ) / 2))
+  @media #{$max-lg-low-height}
+    height: 200px
+    width: 200px
+    top: calc(135px + ((100vh - 104px - 200px ) / 2))
+  @media #{$max-sm-landscape}
+    height: 200px
+    width: 200px
+    top: calc(135px + ((100vh - 104px - 200px ) / 2))
+  @media #{$max-xs-landscape}
+    height: 150px
+    width: 150px
+  @media #{$max-xs-portrait}
+    height: 250px
+    width: 250px
+    top: calc(190px + ((100vh - 134px - 250px ) / 2))
+  @media #{$max-xs-low-height}
+    height: 100px
+    width: 100px
 
 
 h1
@@ -20,7 +46,7 @@ h1
   font-size: 48px
   font-weight: 300
   margin: 0
-  line-height: 75px
+  line-height: 50px
   max-width: 200px
   text-transform: uppercase
   position: absolute
@@ -28,8 +54,9 @@ h1
   transform: translate(-50%, -50%)
   left: 50%
   top: 50%
-
-.video
-  position: fixed
-  top: 0
-  left: 0
+  @media #{$max-xl-low-height}
+    font-size: 22px
+  @media #{$max-sm-landscape}
+    font-size: 28px
+  @media #{$max-xs}
+    font-size: 22px

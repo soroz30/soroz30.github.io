@@ -32,6 +32,10 @@ h2
   left: 50%
   transform: translate(-50%, -50%)
   width: 70%
+  @media #{$max-xl-low-height}
+    position: static
+    transform: none
+    padding: 88px
   @media #{$max-xl}
     width: 80%
   @media #{$max-lg}
@@ -41,11 +45,11 @@ h2
     transform: none
     padding: 40px 0
   @media #{$max-md-portrait}
-    padding: 150px 0 0
-  @media #{$max-sm-portrait}
     padding: 75px 0 0
+  @media #{$max-sm}
+    padding: 35px 0
   @media #{$max-xs-portrait}
-    padding: 75px 0 50px
+    padding: 35px 0 50px
 
 .green
   color: #4BDAA5
@@ -61,8 +65,19 @@ h2
 
 .photo
   width: 50%
+  position: relative
   @media #{$max-md}
     width: 100%
+    height: 230px
+  @media #{$max-sm}
+    height: 150px
+
+.react
+  position: absolute
+  left: 0
+  width: 50%
+  height: 50%
+  transform: translate(50%, 50%)
 
 .about
   color: #fff
@@ -80,7 +95,7 @@ h2
     text-align: center
     width: 80%
   @media #{$max-sm-portrait}
-    margin: 20px auto
+    margin: 50px auto
   @media #{$max-xs-portrait}
     width: 90%
 

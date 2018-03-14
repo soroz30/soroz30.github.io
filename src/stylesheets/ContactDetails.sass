@@ -35,13 +35,15 @@
   height: 400px
   position: absolute
   width: 100%
+  @media #{$max-xl-low-height}
+    height: 300px
   @media #{$max-lg}
     height: 300px
+  @media #{$max-lg-low-height}
+    height: 200px
   @media #{$max-lg-portrait}
     height: 400px
     width: 400px
-  @media #{$max-lg-low-height}
-    height: 200px
   @media #{$max-md}
     position: static
     margin: 40px auto

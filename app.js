@@ -28,15 +28,17 @@ var send = function (res, email, name, text) {
         text: text
     }
     
-    transporter.sendMail(message);
+    transporter.sendMail(message, function() {
+        return res.status(200).end()
+    });
 }
 
 app.post('/contact', function(req, res) {
-
   var email = req.body.email
   var name = req.body.name
   var message = req.body.message
-      
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('' + email);
   send(res, email, name, message)
 });
   

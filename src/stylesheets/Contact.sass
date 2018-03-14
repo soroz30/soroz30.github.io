@@ -8,6 +8,16 @@
   max-height: 600px
   transform: translate(-50%, -50%)
   width: 100%
+  &:after
+  	content: ""
+    clear: both
+    display: table
+  @media #{$max-xl-low-height}
+    position: static
+    transform: none
+    max-height: none
+    height: 620px
+    padding: 50px 0
   @media #{$max-md}
     height: auto
     max-height: none
@@ -16,3 +26,5 @@
     transform: none
   @media #{$max-md-portrait}
     padding: 60px 0
+  @media #{$max-xs-high}
+    padding: 145px 0

@@ -4,8 +4,11 @@
   border-top: 1px solid #fff
   bottom: 5px
   font-family: 'Poiret One', cursive
+  overflow: hidden
   position: absolute
   width: 100%
+  p
+    letter-spacing: 1px
   @media #{$max-md}
     bottom: 0
   @media #{$max-sm}
@@ -14,16 +17,14 @@
     font-size: 8px
 
 .modified-footer
-  border-top: 1px solid #fff
-  font-family: 'Poiret One', cursive
-  position: absolute
-  width: 100%
-  @media #{$max-md}
-    bottom: -78px
-  @media #{$max-md-portrait}
-    bottom: 0
+  @extend .footer
+  @media #{$max-xl-low-height}
+    position: static
+  @media #{$max-md-middle-height}
+    position: static
+  @media #{$max-sm-middle-height}
+    position: static
   @media #{$max-xs-portrait}
-    bottom: -66px
     font-size: 8px
   @media #{$max-xs-low-height}
     font-size: 8px
@@ -38,7 +39,10 @@
     bottom: 0
     margin: 8px 0
     position: absolute
-  @media #{$max-xs-portrait}
+    @media #{$max-sm}
+      position: static
+      margin: 42px 0 0
+  @media #{$max-xs}
     display: none
 
 .contact

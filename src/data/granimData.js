@@ -1,7 +1,8 @@
 const granimData = {
     home: {
         gradients: [
-            ['#000A2D', '#00224B']
+            ['#090979', '#020024'],
+            ['#020024', '#020024']
         ],
         transitionSpeed: 2000
     },

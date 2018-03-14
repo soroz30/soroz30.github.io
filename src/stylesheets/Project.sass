@@ -8,20 +8,23 @@
   max-height: 700px
   width: calc((100vh - 350px) * #{$image-proportion})
   max-width: 980px
+  @media #{$max-xl-low-height}
+    height: calc(100vh - 200px)
+    width: calc((100vh - 200px) * #{$image-proportion})
   @media #{$max-lg}
     height: calc(100vh - 300px)
     max-height: calc(90vw / #{$image-proportion})
     width: calc((100vh - 300px) * #{$image-proportion})
     max-width: 90vw
+  @media #{$max-lg-low-height}
+    height: calc(100vh - 250px)
+    width: calc((100vh - 250px) * #{$image-proportion})
   @media #{$max-sm}
     height: calc(100vh - 200px)
     width: calc((100vh - 200px) * #{$image-proportion})
   @media #{$max-xs}
     height: calc(100vh - 150px)
     width: calc((100vh - 150px) * #{$image-proportion})
-  @media #{$max-xs-low-height}
-    height: calc(100vh - 200px)
-    width: calc((100vh - 200px) * #{$image-proportion})
 
 .figcaption
   color: #fff

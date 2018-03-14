@@ -21,19 +21,19 @@ const TopNav = (props) => {
             	className={styles.link}
             	activeClassName={styles.active}
             	onClick={() => props.handleEvent("about")}
-            >About</NavLink>
+            >O mnie</NavLink>
             <NavLink
             	to="/projects"
             	className={styles.link}
             	activeClassName={styles.active}
             	onClick={() => props.handleEvent("projects0")}
-            >Projects</NavLink>
+            >Projekty</NavLink>
             <NavLink
             	to="/contact"
             	className={styles.link}
             	activeClassName={styles.active}
             	onClick={() => props.handleEvent("contact")}
-            >Contact</NavLink>
+            >Kontakt</NavLink>
         </div>
     );
 };

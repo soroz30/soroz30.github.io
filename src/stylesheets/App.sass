@@ -4,21 +4,17 @@
   box-sizing: border-box
 
 body
-  overflow: hidden
-  height: 100vh
+  overflow-x: hidden
+  min-height: 100vh
+  margin: 0
+  position: relative
   text-align: center
-  @media #{$max-md}
-    height: auto
-    min-height: 100vh
-    overflow: visible
-    position: relative
-    margin: 0
 
 .Granim
   position: absolute
   display: block
   width: 100vw
-  height: 100vh
+  height: 100%
   top: 0
   right: 0
   bottom: 0
@@ -27,28 +23,37 @@ body
     height: 100%
     width: 100%
 
-
-.Modified-Granim
-  position: absolute
-  display: block
-  width: 100%
-  height: calc(100% + 78px)
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  @media #{$max-md-portrait}
-    height: 100vh
-  @media #{$max-xs-portrait}
-    height: calc(100% + 66px)
-
 .Portfolio
   font-family: 'Roboto Condensed', sans-serif;
   position: relative
-  height: 100vh
+  min-height: 100vh
   margin: 0 auto
   width: 75vw
   @media #{$max-md}
     height: auto
     min-height: 100vh
     width: 90vw
+
+.video-container
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+  video
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+.video-container
+  .hidden-video
+    min-height: 0
+    min-width: 0
+    height: 0
+    width: 0

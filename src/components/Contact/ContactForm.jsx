@@ -8,7 +8,8 @@ class ContactForm extends Component {
             email: '',
             message: ''
         },
-        sending: false
+        submitButton: 'wyślij',
+        disabled: false
     }
 
     onChange = (evt) => {
@@ -17,19 +18,35 @@ class ContactForm extends Component {
         this.setState({ fields });
     }
 
-    onSubmit = () => {
-        this.setState({ sending: true })
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.setState({ submitButton: 'wysyłanie' });
+        fetch('/contact', {
+            headers: { 'content-type': 'application/json' },
+            method: 'post',
+            body: JSON.stringify(this.state.fields)
+        }).then(response => {
+            this.setState({
+                fields: {
+                    name: '',
+                    email: '',
+                    message: ''
+                },
+                submitButton: 'Wiadomość została wysłana!',
+                disabled: true
+            });
+        });
     }
 
 	render = () => {
         return (
-    	    <form onSubmit={this.onSubmit} method="POST" className={styles.form} action="/contact">
+    	    <form onSubmit={this.onSubmit} className={styles.form}>
             	<input
                     className={styles['text-input']}
                     id="name"
                     type="text"
                     name="name"
-                    placeholder="YOUR NAME *" 
+                    placeholder="TWOJE IMIĘ *" 
                     required
                     onChange={this.onChange}
                     value={this.state.fields.name}
@@ -45,7 +62,7 @@ class ContactForm extends Component {
                     value={this.state.fields.email}
                 />
                 <div className={styles['bottom-partial']}>
-                    <label className={styles['label-message']} htmlFor="message">Message</label>
+                    <label className={styles['label-message']} htmlFor="message">Wiadomość</label>
                 	<textarea
                         id="message"
                         name="message"
@@ -55,9 +72,10 @@ class ContactForm extends Component {
                         value={this.state.fields.message}
                     ></textarea>
                 	<input
-                    className={styles['submit-input']}
-                    type="submit"
-                    value={this.state.sending ? 'Sending' : 'Send'}
+                        className={styles['submit-input']}
+                        type="submit"
+                        value={this.state.submitButton}
+                        disabled={this.state.disabled}
                     />
                 </div>
             </form>

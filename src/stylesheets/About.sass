@@ -13,7 +13,8 @@ li
 
 li:before
   @media #{$max-xl}
-    content: "-"
+    color: #4BDAA5
+    content: "•"
     margin: 0 5px 0 0
   @media #{$max-md}
     content: none
@@ -30,7 +31,7 @@ h2
   position: absolute
   top: 50%
   left: 50%
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -55%)
   width: 70%
   @media #{$max-xl-low-height}
     position: static
@@ -83,11 +84,14 @@ h2
   color: #fff
   font-size: 22px
   margin: 0 0 50px
-  text-align: left
+  text-align: center
   width: 50%
+  p
+    text-align: justify;
   @media #{$max-xl}
     margin: 0 0 30px
     font-size: 16px
+    text-align: left
   @media #{$max-lg}
     margin: 0
   @media #{$max-md}

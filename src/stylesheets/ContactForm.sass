@@ -35,8 +35,10 @@ textarea
   border: none
   border-bottom: 1px solid gray
   resize: none
-  @media #{$max-xl-low-height}
+  @media #{$max-xl}
     height: 175px
+  @media #{$max-xl-high-height}
+    height: auto
   @media #{$max-md-portrait}
     height: 200px
   @media #{$max-sm-portrait}
@@ -61,6 +63,7 @@ textarea
   color: #fff
   border: none
   background-color: #238D66
+  letter-spacing: 2px
   margin: 60px 0 0
   text-transform: uppercase
   transition: background-color 0.5s
@@ -70,7 +73,7 @@ textarea
   &:focus
     border: none !important
   &:disabled
-    background-color: #36D99D
+    background-color: #238D66
   @media #{$max-lg-low-height}
     margin: 0
   @media #{$max-md-portrait}

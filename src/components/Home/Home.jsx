@@ -6,7 +6,7 @@ const Home = ({handleEvent}) => {
     return (
         <div>
             <NavLink to="/about">
-                <div className={styles.circle} onClick={() => handleEvent('about')}>
+                <div className={styles.circle}>
                     <h1>Marek Koseski</h1>
                 </div>
             </NavLink>

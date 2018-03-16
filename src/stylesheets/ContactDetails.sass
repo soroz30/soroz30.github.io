@@ -18,7 +18,7 @@
   margin: 0
 
 .circle
-  background-color: #4BDAA5
+  background-color: #238D66
   border-radius: 50%
   display: inline-block
   height: 40px
@@ -35,8 +35,10 @@
   height: 400px
   position: absolute
   width: 100%
-  @media #{$max-xl-low-height}
+  @media #{$max-xl}
     height: 300px
+  @media #{$max-xl-high-height}
+    height: 400px
   @media #{$max-lg}
     height: 300px
   @media #{$max-lg-low-height}

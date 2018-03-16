@@ -11,7 +11,7 @@ const About = () => {
             <div className={styles.about}>
                 <h2 className={styles.green}><span className={styles.circle}></span>O MNIE</h2>
                 <p>Mam na imię Marek, mam 31 lat. Od kilkunastu miesięcy uczę się Web Developmentu.
-                W trakcie nauki ukończyłem kursy Kodilla Web Developer, Launch School i w ich ramach wykonałem dużo zadań związanych z nauką programowania.
+                W trakcie nauki ukończyłem kursy Kodilla Web Developer, Launch School i wykonałem dużo zadań związanych z nauką programowania.
                 Skupiałem się głównie na nauce HTML, CSS, JavaScript, a także jQuery i React, poznałem również podstawy backendu i SQL.
                 Wykonałem samodzielnie strony internetowe i aplikacje umieszczone w sekcji projekty, sukcesywnie będe dodawał nowe.
                 Aktualnie poszukuję pracy na stanowisku Junior Web/Front Developer bądź stażu.</p>

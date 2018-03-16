@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import TopNav from './TopNav';
 import Home from './Home/Home';
 import About from './About/About';
@@ -36,7 +36,7 @@ class App extends Component {
     }
 
     componentWillMount = () => {
-        const path = window.location.hash.match(/#\/(\w*)/)[1]
+        const path = this.props.location.pathname.match(/\/(\w*)/)[1];
         const videoSupported = this.videoSupported();
         switch (path) {
             case 'about':
@@ -46,14 +46,8 @@ class App extends Component {
                 this.setState({ granim: 'contact', video: false, showGranim: true, videoSupported });
                 break
             case 'projects':
-                const projectIterator = sessionStorage.getItem('iterator');
-                const numberOfGradients = 4;
-                const slideNumber = projectIterator % numberOfGradients;
-                if (projectIterator) {
-                    this.setState({ granim: `projects${slideNumber}`, video: false, showGranim: true, videoSupported });
-                } else {
-                    this.setState({ granim: 'projects0', video: false, showGranim: true, videoSupported });
-                }
+                const slideNumber = this.getProjectIterator();
+                this.setState({ granim: `projects${slideNumber}`, video: false, showGranim: true, videoSupported });
                 break
             default:
                 this.setState({ granim: 'home', video: true, showGranim: false, videoSupported });
@@ -66,13 +60,33 @@ class App extends Component {
     }
 
     componentDidUpdate = (prevProps, prevState) => {
+        this.handleRouteChange();
         if (this.state.granim === 'home' && this.state.videoSupported) {
             this.refs.video.play();
             clearTimeout(this.hideVideoTimeout);
         }
         this.removeGoogleMapsScripts(prevState);
-        if (prevState.granim === 'home' && prevState.video && this.state.videoSupported) {
+        if (this.state.granim !== 'home' && prevState.granim === 'home' && prevState.video && this.state.videoSupported) {
             this.hideVideo();   
+        }
+    }
+
+    handleRouteChange = () => {
+        const path = this.props.location.pathname.match(/\/(\w*)/)[1] || 'home';
+        const currentPath = this.state.granim.match(/[a-z]+/)[0];
+        if (path === currentPath) { return; }
+        if (this.checkInvalidRoute(path)) {
+            return this.setState({ granim: 'home', video: true, showGranim: false }, () => {
+                this.props.location.pathname = '/';
+            });
+        }
+        this.toggleState(path, currentPath);
+
+    }
+
+    checkInvalidRoute = (path) => {
+        if (['', 'about', 'projects', 'contact'].indexOf(path) === -1) {
+            return true;
         }
     }
 
@@ -105,45 +119,49 @@ class App extends Component {
         }, 1500);
     }
 
-    handleEvent = (granimState) => {
-        if (this.state.granim === 'home' && granimState !== 'home') {
-            this.setState({ granim: granimState, showGranim: true, granimDelay: true });
-        } else if (this.state.granim !== 'home' && granimState === 'home') {
-            this.setState({ granim: granimState, showGranim: false, video: true, granimDelay: true });
-        } else if (this.state.granim !== granimState) {
-            this.setState({ granim: granimState, showGranim: true })
+    toggleState = (path, currentPath) => {
+        if (path === 'projects') { path = `projects${ this.getProjectIterator() }` };
+        if (currentPath === 'home' && path !== 'home') {
+            this.setState({ granim: path, showGranim: true, granimDelay: true });
+        } else if (currentPath !== 'home' && path === 'home') {
+            this.setState({ granim: path, showGranim: false, video: true, granimDelay: true });
+        } else if (currentPath !== path) {
+            this.setState({ granim: path, showGranim: true });
         }
     }
 
+    changeProject = (project) => {
+        this.setState({ granim: project });
+    }
+
+    getProjectIterator = () => {
+        const projectIterator = sessionStorage.getItem('iterator') || 0;
+        const numberOfGradients = 4;
+        return projectIterator % numberOfGradients;
+    }
+
     render = () => {
-        const granimMountTime = this.state.granimDelay ? 1500 : 0;
+        const granimMountTime = this.state.granimDelay ? 1000 : 0;
         return (
             <div>
                 <Helmet>
                     <meta charSet='utf-8' />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="description" content="Marek Koseski Web Developer Portfolio" />
                     <title>Portfolio</title>
                     <link href="https://fonts.googleapis.com/css?family=Poiret+One%7cRoboto+Condensed:300" rel="stylesheet"></link>
                 </Helmet>
                 <Favicon url={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMZQTFRFAAAAYdr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7Ydr7////cRtO1wAAAEF0Uk5TAAAESWcyAjN/PnpjTw6lRmAUYZ0rgbubsWoBVESMk1Ydh5U88UIGeBxyia2UdS5RkWSroKxOUB6aSF45F3cgDwWjiK/CAAAAAWJLR0RBid5sTgAAAAlwSFlzAAAASAAAAEgARslrPgAAAMJJREFUGNNlzkcWgkAQBNApUBjCmJAsYkDFhCAGQBTvfyoDrLQ2/d5fVDUh/wHHt9qC0G7xHGoQqSQriixRsQFVBet02OfW0O31B5o26Pe6H4Aw1A3Tsm3LNPShAOK4dOSNJd+Xxt6Iug6ZTBns2TwI5jMbbDohjC6WK000DFFbLReUEYTrzXa3j6L9brtZh+9a4BAnxzQ9JfEB312cL7hm2RWXc/NHXji3LLs5Rd5AqdP743GnetkAqvAJPMOqrvjJC8qUEkUDC+R9AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE4LTAzLTEzVDE0OjI5OjUwKzAwOjAwfy2XWAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOC0wMy0xM1QxNDoyOTo1MCswMDowMA5wL+QAAABGdEVYdHNvZnR3YXJlAEltYWdlTWFnaWNrIDYuNy44LTkgMjAxNC0wNS0xMiBRMTYgaHR0cDovL3d3dy5pbWFnZW1hZ2ljay5vcmfchu0AAAAAGHRFWHRUaHVtYjo6RG9jdW1lbnQ6OlBhZ2VzADGn/7svAAAAGHRFWHRUaHVtYjo6SW1hZ2U6OmhlaWdodAAxOTIPAHKFAAAAF3RFWHRUaHVtYjo6SW1hZ2U6OldpZHRoADE5MtOsIQgAAAAZdEVYdFRodW1iOjpNaW1ldHlwZQBpbWFnZS9wbmc/slZOAAAAF3RFWHRUaHVtYjo6TVRpbWUAMTUyMDk1MTM5MP1w+BYAAAAPdEVYdFRodW1iOjpTaXplADBCQpSiPuwAAABWdEVYdFRodW1iOjpVUkkAZmlsZTovLy9tbnRsb2cvZmF2aWNvbnMvMjAxOC0wMy0xMy9lNjAyMWJiYzNiZDAyM2E1NGE5NGQ1YjJjYjQ5YWRmNi5pY28ucG5nfAu/qAAAAABJRU5ErkJggg=='} />
                 <PreCacheImg images={imagesPaths} />
                 {   this.state.videoSupported ? (
-                        this.state.video ? (
                                 <div className={styles['video-container']}>
                                     <video ref="video" autoPlay muted loop>
                                         <source src="http://res.cloudinary.com/soroz30/video/upload/v1521021745/OMSBG5.mp4" type="video/mp4"/>
                                     </video>
                                 </div>
-                                ) : (
-                                <div className={styles['video-container']}>
-                                    <video ref="video" muted className={styles['hidden-video']}>
-                                        <source src="http://res.cloudinary.com/soroz30/video/upload/v1521021745/OMSBG5.mp4" type="video/mp4"/>
-                                    </video>
-                                </div>
-                                )
-                            )
-                        :   (
+                            ) : (
                                 null
-                        )
+                            )
                 }
                 { this.state.videoSupported ? (
                         <Animate
@@ -157,7 +175,7 @@ class App extends Component {
                                 timing: { duration: granimMountTime }}}
                             leave={{
                                 opacity: [0],
-                                timing: { duration: granimMountTime }}}
+                                timing: { duration: (granimMountTime + 500) }}}
                         >
                             {({ opacity }) => {
                                 return (
@@ -180,12 +198,11 @@ class App extends Component {
                     )
                 }
                 <div className={styles.Portfolio}>
-                    <TopNav handleEvent={this.handleEvent} />
+                    <TopNav />
                     <Switch >
                         <Route exact path="/" render={() => {
                             return (
                                 <Home
-                                    handleEvent={this.handleEvent}
                                 />
                             )
                         }} />
@@ -193,13 +210,21 @@ class App extends Component {
                         <Route path="/projects" render={() => {
                             return (
                                 <Projects
-                                    handleEvent={this.handleEvent}
+                                    changeProject={this.changeProject}
                                     images={images}
                                 />
                             )
                         }} />
                         <Route path="/contact" component={Contact} />
-                        <Route component={Home} />
+                        <Route render={() => {
+                            return this.state.granim !== 'home' ? (
+                                (
+                                    <Redirect to="/"/>
+                                )
+                            ) : (
+                                null
+                            )
+                        }} />
                     </Switch>
                     <Footer modified={this.state.granim.match(/(about|contact)/)} />
                 </div>

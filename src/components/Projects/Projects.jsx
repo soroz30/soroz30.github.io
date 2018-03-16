@@ -8,10 +8,10 @@ import AngleDoubleLeft from 'react-icons/lib/fa/angle-double-left';
 import AngleDoubleRight from 'react-icons/lib/fa/angle-double-right';
 
 const numberOfGradients = 4;
-const slidesArrayLength = 5;
+const slidesArrayLastIndex = 5;
 
 const propTypes = {
-    handleEvent: PropTypes.func.isRequired,
+    changeProject: PropTypes.func.isRequired,
     images: PropTypes.object.isRequired
 }
 
@@ -66,23 +66,23 @@ class Projects extends Component {
     }
 
     nextSlide = () => {
-        if (this.state.iterator === slidesArrayLength) {
-            this.props.handleEvent('projects0');
+        if (this.state.iterator === slidesArrayLastIndex) {
+            this.props.changeProject('projects0');
             this.setState({ iterator: 0, showProject: true });
         } else {
             const slideNumber = (this.state.iterator + 1) % numberOfGradients;
-            this.props.handleEvent(`projects${slideNumber}`);
+            this.props.changeProject(`projects${slideNumber}`);
             this.setState({ iterator: this.state.iterator + 1, showProject: true });
         }
     }
 
     prevSlide = () => {
         if (this.state.iterator === 0) {
-            this.props.handleEvent('projects0');
-            this.setState({ iterator: slidesArrayLength, showProject: true });
+            this.props.changeProject('projects1');
+            this.setState({ iterator: slidesArrayLastIndex, showProject: true });
         } else {
             const slideNumber = (this.state.iterator - 1) % numberOfGradients;
-            this.props.handleEvent(`projects${slideNumber}`);
+            this.props.changeProject(`projects${slideNumber}`);
             this.setState({ iterator: this.state.iterator - 1, showProject: true });
         }
     }
